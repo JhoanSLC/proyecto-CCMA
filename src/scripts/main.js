@@ -1,5 +1,4 @@
-const calidadOptima = document.getElementById('calidad-optima');
+import { animacionSecciones } from './animacion-secciones'
 
-calidadOptima.addEventListener('click', () => {
-    calidadOptima.innerText = 'Hola'
-})
+animacionSecciones()
+const calidadOptima = document.getElementById('calidad-optima');

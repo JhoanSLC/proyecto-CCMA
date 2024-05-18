@@ -3,9 +3,10 @@ import HeaderNumber from "./headerNumber.astro"
 
 const { pregunta } = Astro.props
 const { numero } = Astro.props
+const {section} = Astro.props
 ---
 
-<section class="container text-white max-w-screen-2xl h-screen flex flex-col items-center justify-center text-wrap text-center p-3 sm:px-0 ">
+<section id={section}class="transition-opacity opacity-0 hidden container text-white max-w-screen-2xl h-screen flex flex-col items-center justify-center text-wrap text-center p-3 sm:px-0 ">
     <HeaderNumber number={numero}/>
     <h1 class="text-3xl mt-2 sm:text-2xl"><strong>{pregunta}</strong></h1>
     
