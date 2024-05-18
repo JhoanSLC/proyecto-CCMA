@@ -1,0 +1,11 @@
+---
+const { imagen } = Astro.props
+const { txt } = Astro.props
+const { ident } = Astro.props
+---
+
+
+<section id={ident} class="flex flex-col items-center hover:-translate-y-2 cursor-pointer w-[280px] h-[200px] duration-300 hover:bg-neutral-600 transition-all justify-center">
+    <img class="w-[150px] h-[150px]" src={imagen} alt="">
+    <p>{txt}</p>
+</section>

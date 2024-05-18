@@ -1,0 +1,19 @@
+---
+import HeaderNumber from "./headerNumber.astro"
+
+const { pregunta } = Astro.props
+const { numero } = Astro.props
+---
+
+<section class="container text-white max-w-screen-2xl h-screen flex flex-col items-center justify-center text-wrap text-center p-3 sm:px-0 ">
+    <HeaderNumber number={numero}/>
+    <h1 class="text-3xl mt-2 sm:text-2xl"><strong>{pregunta}</strong></h1>
+    
+    <div class="flex flex-row gap-8 items-center mt-4">
+        <slot name="card1"/>
+        <slot name="card2"/>
+        <slot name="card3"/>
+        <slot name="card4"/>
+    </div>
+    
+</section>
