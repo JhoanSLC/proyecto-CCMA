@@ -4,17 +4,19 @@ import HeaderNumber from "./headerNumber.astro"
 const { pregunta } = Astro.props
 const { numero } = Astro.props
 const {section} = Astro.props
+
 ---
 
-<section id={section}class="transition-opacity opacity-0 hidden container text-white max-w-screen-2xl h-screen flex flex-col items-center justify-center text-wrap text-center p-3 sm:px-0 ">
+<section id={section} class="transition-all flex container text-white max-w-screen-2xl h-screen flex-col items-center justify-center text-wrap text-center p-3 sm:px-0 ">
     <HeaderNumber number={numero}/>
     <h1 class="text-3xl mt-2 sm:text-2xl"><strong>{pregunta}</strong></h1>
     
-    <div class="flex flex-row gap-4 items-center mt-8">
+    <div class="flex flex-row gap-4 items-center mt-8 flex-wrap place-content-center">
         <slot name="card1"/>
         <slot name="card2"/>
         <slot name="card3"/>
         <slot name="card4"/>
+        <slot name="card5" />
     </div>
     
 </section>

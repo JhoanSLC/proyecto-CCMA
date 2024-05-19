@@ -2,11 +2,13 @@
 const { imagen } = Astro.props
 const { txt } = Astro.props
 const { ident } = Astro.props
-
+const { classes } = Astro.props
+const baseClasses  = "flex flex-col items-center hover:-translate-y-2 cursor-pointer rounded-md ] duration-300 hover:bg-neutral-600 transition-all justify-center"
+const finalClasses = `${classes} ${baseClasses}`
 ---
 
 
-<section id={ident} class="flex flex-col items-center hover:-translate-y-2 cursor-pointer w-[240px] rounded-md h-[170px] duration-300 hover:bg-neutral-600 transition-all justify-center">
+<section id={ident} class={finalClasses}>
     <img class="w-[120px] h-[120px]" src={imagen} alt="">
     <p class="mt-3 text-sm">{txt}</p>
 </section>

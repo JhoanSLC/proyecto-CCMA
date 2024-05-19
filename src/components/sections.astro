@@ -1,0 +1,26 @@
+---
+import QuestionSec from "./questionSec.astro"
+import Card from "./card.astro"
+---
+
+<QuestionSec section="section-1" numero="1/10" pregunta="¿Qué nivel de calidad estás buscando?"> 
+    <Card classes="w-[240px] h-[170px]"slot="card1" imagen="../../public/section-1/calidadOptima.png" txt="Calidad óptima" ident="calidad-optima" /> 
+    
+    <Card classes="w-[240px] h-[170px]"slot="card2" imagen="../../public/section-1/calidadPrecio.png" txt="Buena relación calidad/precio" ident="calidad-precio" />
+
+    <Card classes="w-[240px] h-[170px]"slot="card3" imagen="../../public/section-1/noImportaLaCalidad.png" txt="No me importa tanto la calidad" ident="no-importa-calidad" />
+
+</QuestionSec>
+
+<QuestionSec section="section-2" numero="2/10" pregunta="¿Qué tipo de App necesitas?"> 
+    <Card classes="w-[180px] h-[230]" slot="card1" imagen="../../public/section-2/android.png" txt="Aplicación android" ident="android" /> 
+    
+    <Card classes="w-[180px] h-[230]" slot="card2" imagen="../../public/section-2/ios.png" txt="Aplicación iOS" ident="ios" />
+
+    <Card classes="w-[180px] h-[230]" slot="card3" imagen="../../public/section-2/windows-phone.png" txt="Aplicación Windows phone" ident="windowsPhone" />
+
+    <Card classes="w-[180px] h-[230]" slot="card4" imagen="../../public/section-2/android-ios.png" txt="Aplicación Android + iOS" ident="android-ios" />
+
+    <Card classes="w-[224px] h-[230]" slot="card5" imagen="../../public/section-1/noImportaLaCalidad.png" txt="Aplicación de escritorio" ident="escritorio" />
+
+</QuestionSec> 

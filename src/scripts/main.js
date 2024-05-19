@@ -1,7 +1,11 @@
 import { animacionSecciones } from './animacion-secciones'
+import { SECTIONS as sect, BUTTONS as b} from './constantes'
 
-const EMPEZAR = document.getElementById('empezar'); // Guardo el boton de empezar
-const mainSection = document.getElementById('main-section'); // Guardo la sección principal
-const section1 = document.getElementById('section-1'); // Guardo la primera
+b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.section1))
 
-EMPEZAR.addEventListener('click', () => animacionSecciones(mainSection, section1))
+b.sec1CalidadOptima.addEventListener('click', () => animacionSecciones(sect.section1, sect.section2))
+b.sec1CalidadPrecio.addEventListener('click', () => animacionSecciones(sect.section1, sect.section2))
+b.sec1NoImporta.addEventListener('click', () => animacionSecciones(sect.section1, sect.section2))
+
+
+

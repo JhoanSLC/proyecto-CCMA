@@ -3,21 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Intro from '../components/intro.astro';
 import Footer from '../components/stickedFooter.astro'
 import MoreInfor from '../components/moreInfor.astro';
-import Question1 from '../components/question1.astro';
-import Card from '../components/card.astro';
+import Sections from '../components/sections.astro';
 ---
 
 <Layout title="¿Cuánto cuesta mi app? - Calculador de presupuestos (clon)">
     
     <Intro />
-    <Question1 section="section-1" numero="1/10" pregunta="¿Qué nivel de calidad estás buscando?"> 
-        <Card slot="card1" imagen="../../public/section-1/calidadOptima.png" txt="Calidad óptima" ident="calidad-optima" /> 
-        
-        <Card slot="card2" imagen="../../public/section-1/calidadPrecio.png" txt="Buena relación calidad/precio" ident="calidad-precio" />
-
-        <Card slot="card3" imagen="../../public/section-1/noImportaLaCalidad.png" txt="No me importa tanto la calidad" ident="no-import-calidad" />
-
-    </Question1> 
+    <Sections />
     <Footer />
     <MoreInfor />
    
