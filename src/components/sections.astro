@@ -1,6 +1,6 @@
 ---
-import QuestionSec from "./questionSec.astro"
-import Card from "./card.astro"
+import QuestionSec from "./questionSec.astro";
+import Card from "./card.astro";
 ---
 
 <QuestionSec section="section-1" numero="1/10" pregunta="¿Qué nivel de calidad estás buscando?"> 
@@ -24,3 +24,91 @@ import Card from "./card.astro"
     <Card classes="w-[224px] h-[230]" slot="card5" imagen="../../public/section-1/noImportaLaCalidad.png" txt="Aplicación de escritorio" ident="escritorio" />
 
 </QuestionSec> 
+
+<QuestionSec section="section-3" numero="3/10" pregunta="¿Qué diseño quieres que tenga tu App?"> 
+
+    <Card classes="w-[240px] h-[246px]"slot="card1" imagen="../../public/section-3/sencilla.png" txt="Interfaz sencilla" ident="interfaz-sencilla" /> 
+    
+    <Card classes="w-[240px] h-[246px]"slot="card2" imagen="../../public/section-3/personalizada.png" txt="Interfaz personalizada" ident="personalizada" />
+
+    <Card classes="w-[240px] h-[246px]"slot="card3" imagen="../../public/section-3/web.png" txt="Interfaz replicada de la web" ident="replica-web" />
+
+    <Card classes="w-[240px] h-[246px]"slot="card4" imagen="../../public/section-3/sinDiseño.png" txt="No necesito diseño" ident="sin-diseño" />
+
+</QuestionSec>
+
+<QuestionSec section="section-4" numero="4/10" pregunta="¿Cómo quieres sacar beneficio de tu App?"> 
+
+    <Card classes="w-[240px] h-[246px]" slot="card1" imagen="../../public/section-4/free.png" txt="Aplicación gratuita con publicidad" ident="app-gratis" /> 
+    
+    <Card classes="w-[240px] h-[246px]" slot="card2" imagen="../../public/section-4/pago.png" txt="Aplicación de pago" ident="app-pago" />
+
+    <Card classes="w-[240px] h-[246px]" slot="card3" imagen="../../public/section-4/comprasEnApp.png" txt="Compras dentro de la app" ident="compras-in-app" />
+
+    <Card classes="w-[240px] h-[246px]" slot="card4" imagen="../../public/section-4/otros.png" txt="Otros / No lo sé todavía" ident="otros" />
+
+</QuestionSec>
+
+<QuestionSec section="section-5" numero="5/10" pregunta="¿Tu App necesita un sistema de login?"> 
+
+    <Card classes="w-[240px] h-[246px]" slot="card1" imagen="../../public/section-5/redes.png" txt="Sí, con redes sociales y email" ident="redes-email" /> 
+    
+    <Card classes="w-[240px] h-[246px]" slot="card2" imagen="../../public/section-5/email.png" txt="Sí, con email" ident="email" />
+
+    <Card classes="w-[240px] h-[246px]" slot="card3" imagen="../../public/section-5/no.png" txt="No" ident="sec5-no" />
+
+    <Card classes="w-[240px] h-[246px]" slot="card4" imagen="../../public/section-5/noSe.png" txt="No lo sé todavía" ident="sec5-nose" />
+
+</QuestionSec>
+
+<QuestionSec section="section-6" numero="6/10" pregunta="¿Tu App tiene que estar integrada con un sitio web?"> 
+
+    <Card classes="w-[240px] h-[170px]"slot="card1" imagen="../../public/section-6/si.png" txt="Sí" ident="sec6-si" /> 
+    
+    <Card classes="w-[240px] h-[170px]"slot="card2" imagen="../../public/section-6/no.png" txt="No" ident="sec6-no" />
+
+    <Card classes="w-[240px] h-[170px]"slot="card3" imagen="../../public/section-6/noSe.png" txt="No lo sé" ident="sec6-nose" />
+
+</QuestionSec>
+
+<QuestionSec section="section-7" numero="7/10" pregunta="¿Los usuarios tienen sus propios perfiles?"> 
+
+    <Card classes="w-[240px] h-[170px]"slot="card1" imagen="../../public/section-7/si.png" txt="Sí" ident="sec7-si" /> 
+    
+    <Card classes="w-[240px] h-[170px]"slot="card2" imagen="../../public/section-7/no.png" txt="No" ident="sec7-no" />
+
+    <Card classes="w-[240px] h-[170px]"slot="card3" imagen="../../public/section-7/noSe.png" txt="No lo sé" ident="sec7-nose" />
+
+</QuestionSec>
+
+<QuestionSec section="section-8" numero="8/10" pregunta="¿Tu app necesita un panel de administración?"> 
+
+    <Card classes="w-[240px] h-[170px]"slot="card1" imagen="../../public/section-8/si.png" txt="Sí" ident="sec8-si" /> 
+    
+    <Card classes="w-[240px] h-[170px]"slot="card2" imagen="../../public/section-8/no.png" txt="No" ident="sec8-no" />
+
+    <Card classes="w-[240px] h-[170px]"slot="card3" imagen="../../public/section-8/noSe.png" txt="No lo sé" ident="sec8-nose" />
+
+</QuestionSec>
+
+<QuestionSec section="section-9" numero="9/10" pregunta="¿Qué idiomas usará tu aplicación?"> 
+
+    <Card classes="w-[240px] h-[170px]"slot="card1" imagen="../../public/section-9/unIdioma.png" txt="Un único idioma" ident="unico-idioma" /> 
+    
+    <Card classes="w-[240px] h-[170px]"slot="card2" imagen="../../public/section-9/bilingue.png" txt="Bilingüe" ident="bilingue" />
+
+    <Card classes="w-[240px] h-[170px]"slot="card3" imagen="../../public/section-9/multilingue.png" txt="Multilingüe" ident="multilingue" />
+
+</QuestionSec>
+
+<QuestionSec section="section-10" numero="10/10" pregunta="¿Tu App necesita un sistema de login?"> 
+
+    <Card classes="w-[240px] h-[246px]" slot="card1" imagen="../../public/section-10/idea.png" txt="Sólo es una idea" ident="idea" /> 
+    
+    <Card classes="w-[240px] h-[246px]" slot="card2" imagen="../../public/section-10/boceto.png" txt="Boceto ya preparado" ident="boceto" />
+
+    <Card classes="w-[240px] h-[246px]" slot="card3" imagen="../../public/section-10/enDesarrollo.png" txt="App en desarrollo" ident="enDesarrollo" />
+
+    <Card classes="w-[240px] h-[246px]" slot="card4" imagen="../../public/section-10/desarrollada.png" txt="App ya desarrollada" ident="desarrollada" />
+
+</QuestionSec>
