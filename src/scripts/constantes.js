@@ -93,8 +93,8 @@ const sec10Desarrollada = document.getElementById('desarrollada');
 
 ///////////////////////////// LOGIN /////////////////////////////
 
-const userName = document.getElementById('nombre-usuario');
-const userLastName = document.getElementById('apellidos-usuario')
+export const userName = document.getElementById('nombre-usuario');
+export const userLastName = document.getElementById('apellidos-usuario')
 
 
 /////////////////// EXPORTACIÓN ////////////////
