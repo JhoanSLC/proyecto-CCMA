@@ -1,6 +1,6 @@
 import { SECTIONS as sect, BUTTONS as b} from './constantes'
 
-let animacionSecciones = (sec1, sec2) => {
+export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {
         sec1.style.display="none"
         sec2.style.display="flex"
@@ -84,3 +84,6 @@ sec9Botones.forEach(boton => {
 
 
  
+
+
+
