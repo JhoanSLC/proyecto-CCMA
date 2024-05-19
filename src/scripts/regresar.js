@@ -7,6 +7,10 @@ export let animacionSecciones = (sec1, sec2) => {
         sec2.style.display="flex"
     }, 200)
     setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
         sec2.style.opacity="0.2"
     }, 230)
     setTimeout(() => {
