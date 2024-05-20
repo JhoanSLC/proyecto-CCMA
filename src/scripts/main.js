@@ -198,6 +198,19 @@ const sections = () => {
             addValor(6000000)
             addConfig("Un Idioma")
         })
+        b.sec10Boceto.addEventListener("click" ,()=>{
+            addConfig("Boceto");
+        })
+        b.sec10Desarrollada.addEventListener("click" ,()=>{
+            addConfig("Desarrollada");
+        })
+        b.sec10EnDesarrollo.addEventListener("click" ,()=>{
+            addConfig("En Desarrollo");
+        })
+        b.sec10Idea.addEventListener("click" ,()=>{
+            addConfig("Idea");
+        })
+        ultimasConfig()
     } else if (user["valor"] == 3000000) {
         b.sec2Android.addEventListener("click", () => {
             addValor(3000000);
