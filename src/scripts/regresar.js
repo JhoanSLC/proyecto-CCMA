@@ -1,4 +1,5 @@
 import { SECTIONS as sect, BUTTONS as b} from './constantes'
+
 export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {
         sec1.style.display="none"

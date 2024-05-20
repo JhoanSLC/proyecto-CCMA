@@ -7,6 +7,10 @@ export let user = {
     "configuraciones": []
 };
 
+const deleteConfig=()=>{
+    user["configuraciones"].pop()
+}
+
 
 const addValor = (valor) => {
     user["valor"] += valor;
