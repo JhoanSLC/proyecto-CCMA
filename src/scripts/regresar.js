@@ -1,0 +1,32 @@
+import { SECTIONS as sect, BUTTONS as b} from './constantes'
+import { user } from './main'
+export let animacionSecciones = (sec1, sec2) => {
+    setTimeout(() => {
+        sec1.style.display="none"
+        sec1.style.opacity="0"
+        sec2.style.display="flex"
+    }, 200)
+    setTimeout(() => {
+        sec2.style.opacity="0.2"
+    }, 230)
+    setTimeout(() => {
+        sec2.style.opacity="0.5"
+    }, 270)
+    setTimeout(() => {
+        sec2.style.opacity="1"
+    }, 310)
+}
+
+const deleteConfig =()=>{
+ user["configuraciones"].pop()
+}
+
+b.reg2.addEventListener('click', () => animacionSecciones(sect.section2, sect.section1),deleteConfig())
+b.reg3.addEventListener('click', () => animacionSecciones(sect.section3, sect.section2),deleteConfig())
+b.reg4.addEventListener('click', () => animacionSecciones(sect.section4, sect.section3),deleteConfig())
+b.reg5.addEventListener('click', () => animacionSecciones(sect.section5, sect.section4),deleteConfig())
+b.reg6.addEventListener('click', () => animacionSecciones(sect.section6, sect.section5),deleteConfig())
+b.reg7.addEventListener('click', () => animacionSecciones(sect.section7, sect.section6),deleteConfig())
+b.reg8.addEventListener('click', () => animacionSecciones(sect.section8, sect.section7),deleteConfig())
+b.reg9.addEventListener('click', () => animacionSecciones(sect.section9, sect.section8),deleteConfig())
+b.reg10.addEventListener('click', () => animacionSecciones(sect.section10, sect.section9),deleteConfig())
