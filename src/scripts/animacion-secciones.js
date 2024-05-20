@@ -1,5 +1,8 @@
 import { SECTIONS as sect, BUTTONS as b} from './constantes'
+
+
 const loginForm = document.getElementById('loginForm');
+
 
 export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {
@@ -50,28 +53,15 @@ let sec2Botones = [b.sec2Android, b.sec2AndroidIOS, b.sec2Escritorio, b.sec2Wind
 
 sec2Botones.forEach(boton => {
     if (boton === b.sec2Escritorio) {
-        boton.addEventListener('click', () => {
-            escritorioOno.push('escritorio')
-            animacionSecciones(sect.section2, sect.sectionEscritorio)});
-    } else {
-        escritorioOno.pop('escritorio')
-        boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.section3));
+        boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.sectionEscritorio));
     }
+    boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.section3));
 })
 
-b.reg3.addEventListener('click', () => {
-    if (escritorioOno.includes('escritorio')) {
-        animacionSecciones(sect.section3, sect.sectionEscritorio)
-    } else {
-        
-        animacionSecciones(sect.section3, sect.section2)
-    }
-})
-b.regEscritorio.addEventListener('click', () => animacionSecciones(sect.sectionEscritorio, sect.section2))
 // 2.5 - 3 
 let secEscBotones = [b.secEscNativa, b.secEscPwa, b.secEscSpa];
 secEscBotones.forEach(boton => {
-    boton.addEventListener('click', () => animacionSecciones(sect.sectionEscritorio, sect.section3))
+    boton.addEventListener('click', () => animacionSecciones())
 })
 
 // 3 - 4
