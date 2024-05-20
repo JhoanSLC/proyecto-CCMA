@@ -7,6 +7,11 @@ export let user = {
     "configuraciones": []
 };
 
+const deleteConfig=()=>{
+    user["configuraciones"].pop()
+}
+
+
 const addValor = (valor) => {
     user["valor"] += valor;
     console.log(user);
@@ -31,6 +36,22 @@ b.sec1NoImporta.addEventListener("click", () => {
     addValor(0);
     sections();
 });
+
+const ultimasConfig=()=>{
+
+    b.sec10Boceto.addEventListener("click" ,()=>{
+        addConfig("Boceto");
+    });
+    b.sec10Desarrollada.addEventListener("click" ,()=>{
+        addConfig("Desarrollada");
+    });
+    b.sec10EnDesarrollo.addEventListener("click" ,()=>{
+        addConfig("En Desarrollo");
+    });
+    b.sec10Idea.addEventListener("click" ,()=>{
+        addConfig("Idea");
+    });
+}
 
 const sections = () => {
     if (user["valor"] == 6000000) {
@@ -150,54 +171,19 @@ const sections = () => {
             addValor(6000000)
             addConfig("Un Idioma")
         })
-        b.sec6Si.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Si");
-        });
-        b.sec6No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec6NoSe.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Nose");
-        });
-        b.sec7Si.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Si");
-        });
-        b.sec7No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec7NoSe.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Nose");
-        });
-        b.sec8Si.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Si");
-        });
-        b.sec8No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec8NoSe.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Nose");
-        });
-        b.sec9UnIdioma.addEventListener("click",()=>{
-            addValor(0)
-            addConfig("Un Idioma")
+        b.sec10Boceto.addEventListener("click" ,()=>{
+            addConfig("Boceto");
         })
-        b.sec9Bilingue.addEventListener("click",()=>{
-            addValor(3000000)
-            addConfig("Un Idioma")
+        b.sec10Desarrollada.addEventListener("click" ,()=>{
+            addConfig("Desarrollada");
         })
-        b.sec9Multilingue.addEventListener("click",()=>{
-            addValor(6000000)
-            addConfig("Un Idioma")
+        b.sec10EnDesarrollo.addEventListener("click" ,()=>{
+            addConfig("En Desarrollo");
         })
+        b.sec10Idea.addEventListener("click" ,()=>{
+            addConfig("Idea");
+        })
+        ultimasConfig()
     } else if (user["valor"] == 3000000) {
         b.sec2Android.addEventListener("click", () => {
             addValor(3000000);
@@ -532,6 +518,4 @@ const sections = () => {
         })
     }
 };
-
-console.log(user);
 
