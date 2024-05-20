@@ -1,4 +1,9 @@
 import { SECTIONS as sect, BUTTONS as b} from './constantes'
+
+
+const loginForm = document.getElementById('loginForm');
+
+
 export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {
         sec1.style.display="none"
@@ -6,6 +11,10 @@ export let animacionSecciones = (sec1, sec2) => {
         sec2.style.display="flex"
     }, 200)
     setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
         sec2.style.opacity="0.2"
     }, 230)
     setTimeout(() => {
@@ -14,9 +23,21 @@ export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {
         sec2.style.opacity="1"
     }, 310)
+    
 }
 
-b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.section1))
+b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.loginSec));
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Evita el envío del formulario por defecto
+
+    if (loginForm.checkValidity()) {
+        // El formulario es válido
+        animacionSecciones(sect.loginSec, sect.section1);
+    } else {
+        // El formulario no es válido, muestra mensajes de validación
+        loginForm.reportValidity();
+    }
+});
 
 // 1 - 2
 

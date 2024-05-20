@@ -2,6 +2,7 @@
 
 
 const mainSection = document.getElementById('main-section'); // Guardo la sección principal
+const loginSec = document.getElementById('loginsec')
 const section1 = document.getElementById('section-1'); // Guardo la primera sección
 const section2 = document.getElementById('section-2'); // Guardo la segunda sección
 const section3 = document.getElementById('section-3'); // Guardo la tercera sección
@@ -19,7 +20,7 @@ const section10 = document.getElementById('section-10'); // Guardo la decima sec
 // // // // // // // // // BOTONES // // // // // // // // // // // // // //
 
 const EMPEZAR = document.getElementById('empezar'); // Guardo el boton de empezar
-
+const loginButton = document.getElementById('loginButton')
 // Sección 1 
 
 const sec1CalidadOptima = document.getElementById('calidad-optima'); // Sección uno calidad optima
@@ -90,6 +91,10 @@ const sec10Desarrollada = document.getElementById('desarrollada');
 
 /////////////////////////////////////////////////////////////////////////////
 
+///////////////////////////// LOGIN /////////////////////////////
+
+export const userName = document.getElementById('nombre-usuario');
+export const userLastName = document.getElementById('apellidos-usuario')
 
 
 /////////////////// EXPORTACIÓN ////////////////
@@ -106,6 +111,7 @@ export const SECTIONS = {
     section8,
     section9,
     section10,
+    loginSec,
 
 }
 
@@ -156,4 +162,5 @@ export const BUTTONS = {
     reg8,
     reg9,
     reg10,
+    loginButton,
 }
