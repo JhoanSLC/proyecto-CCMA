@@ -422,4 +422,3 @@ const sections = () => {
     }
 };
 
-console.log(user);
