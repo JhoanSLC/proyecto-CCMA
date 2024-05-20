@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import './animacion-secciones';
-import { SECTIONS as sect, BUTTONS as b } from './constantes';
-=======
 
 import './animacion-secciones';
 import { SECTIONS as sect, BUTTONS as b } from './constantes';
@@ -10,7 +6,6 @@ export let user = {
     "valor": 0,
     "configuraciones": []
 };
->>>>>>> 53da8bd0e1087a974d3837b2914454a80546c78b
 
 let user = {
     "valor": 0,
