@@ -38,18 +38,27 @@ loginForm.addEventListener('submit', (e) => {
 
 // 1 - 2
 
-let sec1Botones = [b.sec1CalidadOptima, b.sec1CalidadPrecio, b.sec1NoImporta]
+let sec1Botones = [b.sec1CalidadOptima, b.sec1CalidadPrecio, b.sec1NoImporta];
 
 sec1Botones.forEach(boton => {
-    boton.addEventListener('click', () => animacionSecciones(sect.section1, sect.section2))
+    boton.addEventListener('click', () => animacionSecciones(sect.section1, sect.section2));
 })
 
 // 2 - 3
 
-let sec2Botones = [b.sec2Android, b.sec2AndroidIOS, b.sec2Escritorio, b.sec2Windows, b.sec2iOS]
+let sec2Botones = [b.sec2Android, b.sec2AndroidIOS, b.sec2Escritorio, b.sec2Windows, b.sec2iOS];
 
 sec2Botones.forEach(boton => {
-    boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.section3))
+    if (boton === b.sec2Escritorio) {
+        boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.sectionEscritorio));
+    }
+    boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.section3));
+})
+
+// 2.5 - 3 
+let secEscBotones = [b.secEscNativa, b.secEscPwa, b.secEscSpa];
+secEscBotones.forEach(boton => {
+    boton.addEventListener('click', () => animacionSecciones())
 })
 
 // 3 - 4
