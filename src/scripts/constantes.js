@@ -5,6 +5,7 @@ const mainSection = document.getElementById('main-section'); // Guardo la secci�
 const loginSec = document.getElementById('loginsec')
 const section1 = document.getElementById('section-1'); // Guardo la primera secci처n
 const section2 = document.getElementById('section-2'); // Guardo la segunda secci처n
+const sectionEscritorio = document.getElementById('section-escritorio'); // Guardar la secci처n de escritorio
 const section3 = document.getElementById('section-3'); // Guardo la tercera secci처n
 const section4 = document.getElementById('section-4'); // Guardo la cuarta secci처n
 const section5 = document.getElementById('section-5'); // Guardo la quinta secci처n
@@ -34,6 +35,12 @@ const sec2iOS = document.getElementById('ios');
 const sec2Windows = document.getElementById('windowsPhone');
 const sec2AndroidIOS = document.getElementById('android-ios');
 const sec2Escritorio = document.getElementById('escritorio');
+
+//SEcci처n 2.5 
+const regEscritorio = document.getElementById('regEscritorio');
+const secEscPwa = document.getElementById('pwa');
+const secEscSpa = document.getElementById('spa');
+const secEscNativa = document.getElementById('nativa')
 
 // Secci처n 3
 const reg3 = document.getElementById('reg3')
@@ -115,6 +122,7 @@ export const SECTIONS = {
     section9,
     section10,
     loginSec,
+    sectionEscritorio,
 
 }
 
@@ -166,4 +174,8 @@ export const BUTTONS = {
     reg9,
     reg10,
     loginButton,
+    regEscritorio,
+    secEscNativa,
+    secEscPwa,
+    secEscSpa,
 }

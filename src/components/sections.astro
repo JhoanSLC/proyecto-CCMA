@@ -27,6 +27,16 @@ import Regresar from "./regresar.astro";
 
 </QuestionSec> 
 
+<QuestionSec section="section-escritorio" numero="2.5/10" pregunta="¿Qué tipo de app de escritorio será?">
+    <Regresar regid="regEscritorio" slot="regresar" />
+    <Card classes="w-[240px] h-[170px]"slot="card1" imagen="../../public/section-6/si.png" txt="PWA" ident="pwa" /> 
+    
+    <Card classes="w-[240px] h-[170px]"slot="card2" imagen="../../public/section-6/no.png" txt="SPA" ident="spa" />
+
+    <Card classes="w-[240px] h-[170px]"slot="card3" imagen="../../public/section-6/noSe.png" txt="Nativa" ident="nativa" />
+
+</QuestionSec>
+
 <QuestionSec section="section-3" numero="3/10" pregunta="¿Qué diseño quieres que tenga tu App?"> 
     <Regresar regid="reg3" slot="regresar" />
     <Card classes="w-[240px] h-[246px]"slot="card1" imagen="../../public/section-3/sencilla.png" txt="Interfaz sencilla" ident="interfaz-sencilla" /> 
