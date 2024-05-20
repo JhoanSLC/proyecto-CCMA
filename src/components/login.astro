@@ -1,25 +1,39 @@
 <section class="bg-[#3d3935]">
   <div id="loginsec" class="hidden opacity-0 flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       
-      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div class="w-full bg-opacity-80 bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 :bg-gray-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Por favor ingresa tus nombres
               </h1>
-              <form id="loginForm" class="space-y-4 md:space-y-6" action="#">
+              <form id="loginForm" class="flex flex-col space-y-4 md:space-y-6" action="#">
                   <div>
                       <label for="nombres" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre/s</label>
                       <input type="text" name="nombres" id="nombre-usuario" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Jhoan Sebastian" required="">
                   </div>
                   <div>
                       <label for="apellidos" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido/s</label>
-                      <input type="text" name="apellidos" id="apellidos-usuario" placeholder="Landazabal Christhian" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                      <input type="text" name="apellidos" id="apellidos-usuario" placeholder="Apellido" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
                   </div>
                   <div>
-                   
+                    <label for="pais" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pais/s</label>
+                    <input type="text" name="pais" id="pais-usuario" placeholder="Pais" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                
+                  </div>
+                  <div>
+                    <label for="numero" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Numero de Telefono</label>
+                    <input type="text" name="pais" id="numero-usuario" placeholder="numero" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                
+                  </div>
+                  <div>
+                    <label for="correo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                    <input type="text" name="pais" id="correo-usuario" placeholder="correo" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                
                   </div>
                   
-                  <button id="loginButton" type="submit" class="w-full bg-slate-300 text-black bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Continuar</button>
+                  <button id="loginButton" type="submit" style="width: 50%;" class="font-bold bg-gradient-to-r from-[#14e2cd] to-[#7a56f4] bg-slate-300 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 place-self-center">Continuar</button>
+
+
                 
               </form>
           </div>

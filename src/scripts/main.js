@@ -1,3 +1,4 @@
+
 import './animacion-secciones';
 import { SECTIONS as sect, BUTTONS as b } from './constantes';
 import './regresar'
@@ -6,10 +7,10 @@ export let user = {
     "configuraciones": []
 };
 
-let user = {
-    "valor": 0,
-    "configuraciones": []
-};
+const deleteConfig=()=>{
+    user["configuraciones"].pop()
+}
+
 
 const addValor = (valor) => {
     user["valor"] += valor;
@@ -35,6 +36,22 @@ b.sec1NoImporta.addEventListener("click", () => {
     addValor(0);
     sections();
 });
+
+const ultimasConfig=()=>{
+
+    b.sec10Boceto.addEventListener("click" ,()=>{
+        addConfig("Boceto");
+    });
+    b.sec10Desarrollada.addEventListener("click" ,()=>{
+        addConfig("Desarrollada");
+    });
+    b.sec10EnDesarrollo.addEventListener("click" ,()=>{
+        addConfig("En Desarrollo");
+    });
+    b.sec10Idea.addEventListener("click" ,()=>{
+        addConfig("Idea");
+    });
+}
 
 const sections = () => {
     if (user["valor"] == 6000000) {
@@ -154,6 +171,19 @@ const sections = () => {
             addValor(6000000)
             addConfig("Un Idioma")
         })
+        b.sec10Boceto.addEventListener("click" ,()=>{
+            addConfig("Boceto");
+        })
+        b.sec10Desarrollada.addEventListener("click" ,()=>{
+            addConfig("Desarrollada");
+        })
+        b.sec10EnDesarrollo.addEventListener("click" ,()=>{
+            addConfig("En Desarrollo");
+        })
+        b.sec10Idea.addEventListener("click" ,()=>{
+            addConfig("Idea");
+        })
+        ultimasConfig()
     } else if (user["valor"] == 3000000) {
         b.sec2Android.addEventListener("click", () => {
             addValor(3000000);
@@ -391,6 +421,4 @@ const sections = () => {
         })
     }
 };
-
-console.log(user);
 

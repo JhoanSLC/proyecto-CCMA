@@ -1,5 +1,8 @@
 import { SECTIONS as sect, BUTTONS as b} from './constantes'
+
+
 const loginForm = document.getElementById('loginForm');
+
 
 export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {

@@ -102,6 +102,9 @@ const sec10Desarrollada = document.getElementById('desarrollada');
 
 export const userName = document.getElementById('nombre-usuario');
 export const userLastName = document.getElementById('apellidos-usuario')
+export const userPais= document.getElementById('pais-usuario')
+export const userNumber= document.getElementById('numero-usuario')
+export const userCorreo=document.getElementById('correo-usuario')
 
 
 /////////////////// EXPORTACIÓN ////////////////
