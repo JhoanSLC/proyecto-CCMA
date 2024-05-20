@@ -6,6 +6,11 @@ export let user = {
     "valor": 0,
     "configuraciones": []
 };
+import './regresar'
+export let user = {
+    "valor": 0,
+    "configuraciones": []
+};
 
 let user = {
     "valor": 0,
@@ -107,6 +112,54 @@ const sections = () => {
             addValor(3000000);
             addConfig("No Sé");
         });
+        b.sec6Si.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Si");
+        });
+        b.sec6No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec6NoSe.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Nose");
+        });
+        b.sec7Si.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Si");
+        });
+        b.sec7No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec7NoSe.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Nose");
+        });
+        b.sec8Si.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Si");
+        });
+        b.sec8No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec8NoSe.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Nose");
+        });
+        b.sec9UnIdioma.addEventListener("click",()=>{
+            addValor(0)
+            addConfig("Un Idioma")
+        })
+        b.sec9Bilingue.addEventListener("click",()=>{
+            addValor(3000000)
+            addConfig("Un Idioma")
+        })
+        b.sec9Multilingue.addEventListener("click",()=>{
+            addValor(6000000)
+            addConfig("Un Idioma")
+        })
         b.sec6Si.addEventListener("click", () => {
             addValor(6000000);
             addConfig("Si");
@@ -273,6 +326,55 @@ const sections = () => {
             addValor(4000000)
             addConfig("Un Idioma")
         })
+        
+        b.sec6Si.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Si");
+        });
+        b.sec6No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec6NoSe.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Nose");
+        });
+        b.sec7Si.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Si");
+        });
+        b.sec7No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec7NoSe.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Nose");
+        });
+        b.sec8Si.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Si");
+        });
+        b.sec8No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec8NoSe.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Nose");
+        });
+        b.sec9UnIdioma.addEventListener("click",()=>{
+            addValor(0)
+            addConfig("Un Idioma")
+        })
+        b.sec9Bilingue.addEventListener("click",()=>{
+            addValor(2000000)
+            addConfig("Un Idioma")
+        })
+        b.sec9Multilingue.addEventListener("click",()=>{
+            addValor(4000000)
+            addConfig("Un Idioma")
+        })
     } else {
         b.sec2Android.addEventListener("click", () => {
             addValor(3000000);
@@ -390,7 +492,56 @@ const sections = () => {
             addValor(2000000)
             addConfig("Un Idioma")
         })
+        b.sec6Si.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Si");
+        });
+        b.sec6No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec6NoSe.addEventListener("click", () => {
+            addValor(1000000);
+            addConfig("Nose");
+        });
+        b.sec7Si.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Si");
+        });
+        b.sec7No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec7NoSe.addEventListener("click", () => {
+            addValor(1000000);
+            addConfig("Nose");
+        });
+        b.sec8Si.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Si");
+        });
+        b.sec8No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec8NoSe.addEventListener("click", () => {
+            addValor(1000000);
+            addConfig("Nose");
+        });
+        b.sec9UnIdioma.addEventListener("click",()=>{
+            addValor(0)
+            addConfig("Un Idioma")
+        })
+        b.sec9Bilingue.addEventListener("click",()=>{
+            addValor(1000000)
+            addConfig("Un Idioma")
+        })
+        b.sec9Multilingue.addEventListener("click",()=>{
+            addValor(2000000)
+            addConfig("Un Idioma")
+        })
     }
 };
 
 console.log(user);
+
