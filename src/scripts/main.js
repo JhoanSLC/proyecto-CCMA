@@ -6,16 +6,6 @@ export let user = {
     "valor": 0,
     "configuraciones": []
 };
-import './regresar'
-export let user = {
-    "valor": 0,
-    "configuraciones": []
-};
-
-let user = {
-    "valor": 0,
-    "configuraciones": []
-};
 
 const addValor = (valor) => {
     user["valor"] += valor;
