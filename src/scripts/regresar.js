@@ -22,7 +22,7 @@ export let animacionSecciones = (sec1, sec2) => {
 }
 
 b.reg2.addEventListener('click', () => animacionSecciones(sect.section2, sect.section1))
-b.reg3.addEventListener('click', () => animacionSecciones(sect.section3, sect.section2))
+
 b.reg4.addEventListener('click', () => animacionSecciones(sect.section4, sect.section3))
 b.reg5.addEventListener('click', () => animacionSecciones(sect.section5, sect.section4))
 b.reg6.addEventListener('click', () => animacionSecciones(sect.section6, sect.section5))

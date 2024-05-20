@@ -35,7 +35,7 @@ loginForm.addEventListener('submit', (e) => {
         loginForm.reportValidity();
     }
 });
-
+let escritorioOno = [];
 // 1 - 2
 
 let sec1Botones = [b.sec1CalidadOptima, b.sec1CalidadPrecio, b.sec1NoImporta];
@@ -50,15 +50,28 @@ let sec2Botones = [b.sec2Android, b.sec2AndroidIOS, b.sec2Escritorio, b.sec2Wind
 
 sec2Botones.forEach(boton => {
     if (boton === b.sec2Escritorio) {
-        boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.sectionEscritorio));
+        boton.addEventListener('click', () => {
+            escritorioOno.push('escritorio')
+            animacionSecciones(sect.section2, sect.sectionEscritorio)});
+    } else {
+        escritorioOno.pop('escritorio')
+        boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.section3));
     }
-    boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.section3));
 })
 
+b.reg3.addEventListener('click', () => {
+    if (escritorioOno.includes('escritorio')) {
+        animacionSecciones(sect.section3, sect.sectionEscritorio)
+    } else {
+        
+        animacionSecciones(sect.section3, sect.section2)
+    }
+})
+b.regEscritorio.addEventListener('click', () => animacionSecciones(sect.sectionEscritorio, sect.section2))
 // 2.5 - 3 
 let secEscBotones = [b.secEscNativa, b.secEscPwa, b.secEscSpa];
 secEscBotones.forEach(boton => {
-    boton.addEventListener('click', () => animacionSecciones())
+    boton.addEventListener('click', () => animacionSecciones(sect.sectionEscritorio, sect.section3))
 })
 
 // 3 - 4
