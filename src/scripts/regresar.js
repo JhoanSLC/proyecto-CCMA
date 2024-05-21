@@ -1,6 +1,7 @@
 // animacion-secciones.js
 import { SECTIONS as sect, BUTTONS as b } from './constantes';
-import { deleteConfig } from './main'; // Importa la función deleteConfig desde main.js
+import { deleteValor} from './main'; 
+
 
 export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {
@@ -27,7 +28,7 @@ export let animacionSecciones = (sec1, sec2) => {
 const addRegListener = (button, sectionToShow, sectionToHide) => {
     button.addEventListener('click', () => {
         animacionSecciones(sectionToShow, sectionToHide);
-        deleteConfig(); 
+        deleteValor();
     });
 };
 
