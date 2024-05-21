@@ -1,32 +1,43 @@
-import { SECTIONS as sect, BUTTONS as b} from './constantes'
+// animacion-secciones.js
+import { SECTIONS as sect, BUTTONS as b } from './constantes';
+import { deleteConfig } from './main'; // Importa la función deleteConfig desde main.js
 
 export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {
-        sec1.style.display="none"
-        sec1.style.opacity="0"
-        sec2.style.display="flex"
-    }, 200)
+        sec1.style.display = "none";
+        sec1.style.opacity = "0";
+        sec2.style.display = "flex";
+    }, 200);
     setTimeout(() => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth' 
+            behavior: 'smooth'
         });
-        sec2.style.opacity="0.2"
-    }, 230)
+        sec2.style.opacity = "0.2";
+    }, 230);
     setTimeout(() => {
-        sec2.style.opacity="0.5"
-    }, 270)
+        sec2.style.opacity = "0.5";
+    }, 270);
     setTimeout(() => {
-        sec2.style.opacity="1"
-    }, 310)
-}
+        sec2.style.opacity = "1";
+    }, 310);
+};
 
-b.reg2.addEventListener('click', () => animacionSecciones(sect.section2, sect.section1))
+// Define una función para agregar el event listener a los botones de regreso
+const addRegListener = (button, sectionToShow, sectionToHide) => {
+    button.addEventListener('click', () => {
+        animacionSecciones(sectionToShow, sectionToHide);
+        deleteConfig(); // Llama a la función deleteConfig cuando se hace clic en el botón
+    });
+};
 
-b.reg4.addEventListener('click', () => animacionSecciones(sect.section4, sect.section3))
-b.reg5.addEventListener('click', () => animacionSecciones(sect.section5, sect.section4))
-b.reg6.addEventListener('click', () => animacionSecciones(sect.section6, sect.section5))
-b.reg7.addEventListener('click', () => animacionSecciones(sect.section7, sect.section6))
-b.reg8.addEventListener('click', () => animacionSecciones(sect.section8, sect.section7))
-b.reg9.addEventListener('click', () => animacionSecciones(sect.section9, sect.section8))
-b.reg10.addEventListener('click', () => animacionSecciones(sect.section10, sect.section9))
+// Agrega event listeners a los botones de regreso con la función deleteConfig
+addRegListener(b.reg2, sect.section2, sect.section1);
+addRegListener(b.reg3, sect.section3, sect.section2);
+addRegListener(b.reg4, sect.section4, sect.section3);
+addRegListener(b.reg5, sect.section5, sect.section4);
+addRegListener(b.reg6, sect.section6, sect.section5);
+addRegListener(b.reg7, sect.section7, sect.section6);
+addRegListener(b.reg8, sect.section8, sect.section7);
+addRegListener(b.reg9, sect.section9, sect.section8);
+addRegListener(b.reg10, sect.section10, sect.section9);
