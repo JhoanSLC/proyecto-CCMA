@@ -1,20 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import QuestionSec from "../components/questionSec.astro"
-import Card from "../components/card.astro";
+import FinalSection from "../components/finalSection.astro"
+import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout title="pagina de pruebas">
 
-    <QuestionSec section="section-10" numero="10/10" pregunta="¿Tu App necesita un sistema de login?"> 
+    <FinalSection />
 
-        <Card classes="w-[240px] h-[246px]" slot="card1" imagen="../../public/section-10/idea.png" txt="Sólo es una idea" ident="idea" /> 
-        
-        <Card classes="w-[240px] h-[246px]" slot="card2" imagen="../../public/section-10/boceto.png" txt="Boceto ya preparado" ident="boceto" />
-    
-        <Card classes="w-[240px] h-[246px]" slot="card3" imagen="../../public/section-10/enDesarrollo.png" txt="App en desarrollo" ident="enDesarrollo" />
-    
-        <Card classes="w-[240px] h-[246px]" slot="card4" imagen="../../public/section-10/desarrollada.png" txt="App ya desarrollada" ident="desarrollada" />
-    
-    </QuestionSec>
 </Layout>
