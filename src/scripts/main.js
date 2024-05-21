@@ -14,7 +14,8 @@ export let user = {
 let op =0
 export const deleteConfig = () => {
     user.configuraciones.pop();
-    console.log("Configuración eliminada:", user.configuraciones); // Agregamos este console.log
+    console.log("Configuración eliminada:", user.configuraciones);
+    
 };
 b.boton.addEventListener("click", () => {
     user["name"] = b.userName.value;

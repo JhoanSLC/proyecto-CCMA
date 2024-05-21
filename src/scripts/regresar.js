@@ -23,15 +23,15 @@ export let animacionSecciones = (sec1, sec2) => {
     }, 310);
 };
 
-// Define una función para agregar el event listener a los botones de regreso
+
 const addRegListener = (button, sectionToShow, sectionToHide) => {
     button.addEventListener('click', () => {
         animacionSecciones(sectionToShow, sectionToHide);
-        deleteConfig(); // Llama a la función deleteConfig cuando se hace clic en el botón
+        deleteConfig(); 
     });
 };
 
-// Agrega event listeners a los botones de regreso con la función deleteConfig
+
 addRegListener(b.reg2, sect.section2, sect.section1);
 addRegListener(b.reg3, sect.section3, sect.section2);
 addRegListener(b.reg4, sect.section4, sect.section3);
