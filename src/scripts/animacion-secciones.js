@@ -38,7 +38,7 @@ loginForm.addEventListener('submit', (e) => {
         loginForm.reportValidity();
     }
 });
-
+let escritorioOno = [];
 // 1 - 2
 
 let sec1Botones = [b.sec1CalidadOptima, b.sec1CalidadPrecio, b.sec1NoImporta];
@@ -50,19 +50,37 @@ sec1Botones.forEach(boton => {
 // 2 - 3
 
 let sec2Botones = [b.sec2Android, b.sec2AndroidIOS, b.sec2Escritorio, b.sec2Windows, b.sec2iOS];
+let isDesktop = false
 
 sec2Botones.forEach(boton => {
     if (boton === b.sec2Escritorio) {
-        boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.sectionEscritorio));
+        boton.addEventListener('click', () => {
+            isDesktop = true
+            animacionSecciones(sect.section2, sect.sectionEscritorio)
+        });
+    } else {
+        
+        boton.addEventListener('click', () => {
+            isDesktop = false
+            animacionSecciones(sect.section2, sect.section3)
+        })
     }
-    boton.addEventListener('click', () => animacionSecciones(sect.section2, sect.section3));
 })
-
+b.reg3.addEventListener('click', () => {
+    if (isDesktop == true) {
+        animacionSecciones(sect.section3, sect.sectionEscritorio);
+    } else {
+        animacionSecciones(sect.section3, sect.section2)
+    }
+})
+b.regEscritorio.addEventListener('click', () => animacionSecciones(sect.sectionEscritorio, sect.section2))
 // 2.5 - 3 
 let secEscBotones = [b.secEscNativa, b.secEscPwa, b.secEscSpa];
 secEscBotones.forEach(boton => {
-    boton.addEventListener('click', () => animacionSecciones())
+    boton.addEventListener('click', () => animacionSecciones(sect.sectionEscritorio, sect.section3))
 })
+
+b.reg3
 
 // 3 - 4
 let sec3Botones = [b.sec3NoNecesita, b.sec3Personalizada, b.sec3RepWeb, b.sec3Sencilla]

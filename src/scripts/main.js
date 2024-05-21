@@ -12,6 +12,10 @@ export let user = {
     "configuraciones": []
 };
 let op =0
+export const deleteConfig = () => {
+    user.configuraciones.pop();
+    console.log("Configuración eliminada:", user.configuraciones); // Agregamos este console.log
+};
 b.boton.addEventListener("click", () => {
     user["name"] = b.userName.value;
     user["last-name"] = b.userLastName.value;
@@ -417,7 +421,7 @@ const sections = () => {
             addValor(2000000)
             addConfig("Un Idioma")
         })
-        ultimasConfig()
+
     }
 };
 
