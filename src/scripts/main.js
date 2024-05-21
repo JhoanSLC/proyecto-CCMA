@@ -3,13 +3,22 @@ import './animacion-secciones';
 import { SECTIONS as sect, BUTTONS as b } from './constantes';
 import './regresar'
 export let user = {
+    "name":"",
+    "last-name":"",
+    "numero": 0,
+    "correo":"",
+    "pais":"",
     "valor": 0,
     "configuraciones": []
 };
-
-const deleteConfig=()=>{
-    user["configuraciones"].pop()
-}
+let op =0
+b.boton.addEventListener("click", () => {
+    user["name"] = b.userName.value;
+    user["last-name"] = b.userLastName.value;
+    user["numero"] = parseInt(b.userNumber.value, 10); 
+    user["correo"] = b.userCorreo.value;
+    user["pais"] = b.userPais.value;
+});
 
 
 const addValor = (valor) => {
@@ -23,17 +32,17 @@ const addConfig = (config) => {
 };
 
 b.sec1CalidadOptima.addEventListener("click", () => {
-    addValor(6000000);
+    op=1
     sections();
 });
 
 b.sec1CalidadPrecio.addEventListener("click", () => {
-    addValor(3000000);
+    op=2
     sections();
 });
 
 b.sec1NoImporta.addEventListener("click", () => {
-    addValor(0);
+    op=3
     sections();
 });
 
@@ -54,25 +63,25 @@ const ultimasConfig=()=>{
 }
 
 const sections = () => {
-    if (user["valor"] == 6000000) {
+    if (op==1) {
         b.sec2Android.addEventListener("click", () => {
-            addValor(3000000);
+            addValor(9000000);
             addConfig("Android");
         });
         b.sec2AndroidIOS.addEventListener("click", () => {
-            addValor(9000000);
+            addValor(15000000);
             addConfig("Android & IOS");
         });
         b.sec2Escritorio.addEventListener("click", () => {
-            addValor(3000000);
+            addValor(9000000);
             addConfig("Escritorio");
         });
         b.sec2Windows.addEventListener("click", () => {
-            addValor(3000000);
+            addValor(9000000);
             addConfig("Windows");
         });
         b.sec2iOS.addEventListener("click", () => {
-            addValor(3000000);
+            addValor(9000000);
             addConfig("IOS");
         });
         b.sec3NoNecesita.addEventListener("click", () => {
@@ -171,38 +180,26 @@ const sections = () => {
             addValor(6000000)
             addConfig("Un Idioma")
         })
-        b.sec10Boceto.addEventListener("click" ,()=>{
-            addConfig("Boceto");
-        })
-        b.sec10Desarrollada.addEventListener("click" ,()=>{
-            addConfig("Desarrollada");
-        })
-        b.sec10EnDesarrollo.addEventListener("click" ,()=>{
-            addConfig("En Desarrollo");
-        })
-        b.sec10Idea.addEventListener("click" ,()=>{
-            addConfig("Idea");
-        })
         ultimasConfig()
-    } else if (user["valor"] == 3000000) {
+    } else if (op==2) {
         b.sec2Android.addEventListener("click", () => {
-            addValor(3000000);
+            addValor(6000000);
             addConfig("Android");
         });
         b.sec2AndroidIOS.addEventListener("click", () => {
-            addValor(7000000);
+            addValor(10000000);
             addConfig("Android & IOS");
         });
         b.sec2Escritorio.addEventListener("click", () => {
-            addValor(3000000);
+            addValor(6000000);
             addConfig("Escritorio");
         });
         b.sec2Windows.addEventListener("click", () => {
-            addValor(3000000);
+            addValor(6000000);
             addConfig("Windows");
         });
         b.sec2iOS.addEventListener("click", () => {
-            addValor(3000000);
+            addValor(6000000);
             addConfig("IOS");
         });
         b.sec3NoNecesita.addEventListener("click", () => {
@@ -302,6 +299,7 @@ const sections = () => {
             addValor(4000000)
             addConfig("Un Idioma")
         })
+        ultimasConfig()
     } else {
         b.sec2Android.addEventListener("click", () => {
             addValor(3000000);
@@ -419,6 +417,7 @@ const sections = () => {
             addValor(2000000)
             addConfig("Un Idioma")
         })
+        ultimasConfig()
     }
 };
 

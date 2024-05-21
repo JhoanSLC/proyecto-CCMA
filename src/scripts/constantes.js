@@ -100,12 +100,12 @@ const sec10Desarrollada = document.getElementById('desarrollada');
 
 ///////////////////////////// LOGIN /////////////////////////////
 
-export const userName = document.getElementById('nombre-usuario');
-export const userLastName = document.getElementById('apellidos-usuario')
-export const userPais= document.getElementById('pais-usuario')
-export const userNumber= document.getElementById('numero-usuario')
-export const userCorreo=document.getElementById('correo-usuario')
-
+const boton = document.getElementById('loginButton');
+const userName = document.getElementById('nombre-usuario');
+const userLastName = document.getElementById('apellidos-usuario');
+const userPais = document.getElementById('pais-usuario');
+const userNumber = document.getElementById('numero-usuario');
+const userCorreo = document.getElementById('correo-usuario');
 
 /////////////////// EXPORTACIÓN ////////////////
 
@@ -127,6 +127,12 @@ export const SECTIONS = {
 }
 
 export const BUTTONS = {
+    boton,
+    userName,
+    userLastName,
+    userPais,
+    userNumber,
+    userCorreo,
     EMPEZAR,
     sec1CalidadOptima,
     sec1CalidadPrecio,
