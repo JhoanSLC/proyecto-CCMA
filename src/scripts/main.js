@@ -12,10 +12,16 @@ export let user = {
     "configuraciones": []
 };
 let op =0
-export const deleteConfig = () => {
-    user.configuraciones.pop();
-    console.log("Configuración eliminada:", user.configuraciones); // Agregamos este console.log
+
+
+export const deleteValor = () => {
+    let valorAnterior=addValor(val)
+    user.valor -= valorAnterior;
+    console.log(user.valor);
+    console.log(valorAnterior)
 };
+
+
 b.boton.addEventListener("click", () => {
     user["name"] = b.userName.value;
     user["last-name"] = b.userLastName.value;
@@ -25,14 +31,20 @@ b.boton.addEventListener("click", () => {
 });
 
 
-const addValor = (valor) => {
-    user["valor"] += valor;
-    console.log(user);
+export const addValor = (valor) => {
+    let valorAnterior = valor;
+    user.valor += valor; 
+    console.log(user.valor);
+    console.log(valorAnterior)
+    return valorAnterior; 
+    
 };
+
 
 const addConfig = (config) => {
     user["configuraciones"].push(config);
     console.log(user["configuraciones"]);
+
 };
 
 b.sec1CalidadOptima.addEventListener("click", () => {
@@ -297,11 +309,11 @@ const sections = () => {
         })
         b.sec9Bilingue.addEventListener("click",()=>{
             addValor(2000000)
-            addConfig("Un Idioma")
+            addConfig("Bilingue")
         })
         b.sec9Multilingue.addEventListener("click",()=>{
             addValor(4000000)
-            addConfig("Un Idioma")
+            addConfig("Multibilingue")
         })
         ultimasConfig()
     } else {
