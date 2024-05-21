@@ -95,17 +95,24 @@ const sec10Boceto = document.getElementById('boceto');
 const sec10EnDesarrollo = document.getElementById('enDesarrollo');
 const sec10Desarrollada = document.getElementById('desarrollada');
 
+// Sección final 
+
+const regFinal = document.getElementById('volver-empezar');
+const crearProyecto = document.getElementById('crear-proyecto');
+const verInfo = document.getElementById('ver-resultado');
+const sectFinal = document.getElementById('section-final')
+
 
 /////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////// LOGIN /////////////////////////////
 
-export const userName = document.getElementById('nombre-usuario');
-export const userLastName = document.getElementById('apellidos-usuario')
-export const userPais= document.getElementById('pais-usuario')
-export const userNumber= document.getElementById('numero-usuario')
-export const userCorreo=document.getElementById('correo-usuario')
-
+const boton = document.getElementById('loginButton');
+const userName = document.getElementById('nombre-usuario');
+const userLastName = document.getElementById('apellidos-usuario');
+const userPais = document.getElementById('pais-usuario');
+const userNumber = document.getElementById('numero-usuario');
+const userCorreo = document.getElementById('correo-usuario');
 
 /////////////////// EXPORTACIÓN ////////////////
 
@@ -123,10 +130,17 @@ export const SECTIONS = {
     section10,
     loginSec,
     sectionEscritorio,
+    sectFinal,
 
 }
 
 export const BUTTONS = {
+    boton,
+    userName,
+    userLastName,
+    userPais,
+    userNumber,
+    userCorreo,
     EMPEZAR,
     sec1CalidadOptima,
     sec1CalidadPrecio,
@@ -178,4 +192,7 @@ export const BUTTONS = {
     secEscNativa,
     secEscPwa,
     secEscSpa,
+    regFinal,
+    crearProyecto,
+    verInfo,
 }
