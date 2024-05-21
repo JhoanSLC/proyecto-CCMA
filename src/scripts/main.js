@@ -13,13 +13,7 @@ export let user = {
 };
 let op =0
 
-
-export const deleteValor = () => {
-    let valorAnterior=addValor(val)
-    user.valor -= valorAnterior;
-    console.log(user.valor);
-    console.log(valorAnterior)
-};
+let valorAnterior=0
 
 
 b.boton.addEventListener("click", () => {
@@ -32,13 +26,20 @@ b.boton.addEventListener("click", () => {
 
 
 export const addValor = (valor) => {
-    let valorAnterior = valor;
+    valorAnterior = valor;
     user.valor += valor; 
     console.log(user.valor);
     console.log(valorAnterior)
     return valorAnterior; 
     
 };
+export const deleteValor = (valorAnterior) => {
+    valorAnterior=addValor()
+    user.valor -= valorAnterior;
+    console.log(user.valor);
+    console.log(valorAnterior)
+};
+
 
 
 const addConfig = (config) => {
