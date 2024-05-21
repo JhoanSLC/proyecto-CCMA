@@ -95,6 +95,13 @@ const sec10Boceto = document.getElementById('boceto');
 const sec10EnDesarrollo = document.getElementById('enDesarrollo');
 const sec10Desarrollada = document.getElementById('desarrollada');
 
+// Sección final 
+
+const regFinal = document.getElementById('volver-empezar');
+const crearProyecto = document.getElementById('crear-proyecto');
+const verInfo = document.getElementById('ver-resultado');
+const sectFinal = document.getElementById('section-final')
+
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -123,6 +130,7 @@ export const SECTIONS = {
     section10,
     loginSec,
     sectionEscritorio,
+    sectFinal,
 
 }
 
@@ -184,4 +192,7 @@ export const BUTTONS = {
     secEscNativa,
     secEscPwa,
     secEscSpa,
+    regFinal,
+    crearProyecto,
+    verInfo,
 }

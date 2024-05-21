@@ -33,3 +33,4 @@ b.reg7.addEventListener('click', () => animacionSecciones(sect.section7, sect.se
 b.reg8.addEventListener('click', () => animacionSecciones(sect.section8, sect.section7))
 b.reg9.addEventListener('click', () => animacionSecciones(sect.section9, sect.section8))
 b.reg10.addEventListener('click', () => animacionSecciones(sect.section10, sect.section9))
+b.regFinal.addEventListener('click', () => animacionSecciones(sect.sectFinal, sect.mainSection))

@@ -130,6 +130,10 @@ sec9Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section9, sect.section10))
 })
 
+let sec10Botones = [b.sec10Boceto, b.sec10Desarrollada, b.sec10EnDesarrollo, b.sec10Idea];
+sec10Botones.forEach(boton => {
+    boton.addEventListener('click', () => animacionSecciones(sect.section10, sect.sectFinal))
+})
 
  
 
