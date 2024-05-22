@@ -1,19 +1,27 @@
----
-import { enviarDatosAMokapi } from '../scripts/mokapis';
----
 
 <script>
+  import { enviarDatosAMokapi } from '../scripts/mokapis';
+  import { actualizarUser, user } from '../scripts/main.js';
   function enviarDatosLogin(event) {
     event.preventDefault(); 
-    const nombres = document.getElementById('nombre-usuario').value;
-    const apellidos = document.getElementById('apellidos-usuario').value;
+    const nombres = (document.getElementById('nombre-usuario') as HTMLInputElement).value;
+    const apellidos = (document.getElementById('apellidos-usuario') as HTMLInputElement).value;
+    const pais = (document.getElementById('pais-usuario') as HTMLInputElement).value;
+    const numero = (document.getElementById('numero-usuario') as HTMLInputElement).value;
+    const correo = (document.getElementById('correo-usuario') as HTMLInputElement).value;
 
     // Construir el objeto de datos
     const data = {
       nombres,
-      apellidos
+      apellidos,
+      pais,
+      numero,
+      correo
     };
+    actualizarUser(data);
     enviarDatosAMokapi(data);
+    const form = document.getElementById('loginForm')as HTMLFormElement;
+    form.reset();
   }
 
   // Agregar un listener al botón de login para llamar a la función enviarDatosLogin

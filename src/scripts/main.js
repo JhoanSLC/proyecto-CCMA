@@ -11,7 +11,16 @@ export let user = {
     "valor": 0,
     "configuraciones": []
 };
-
+export function actualizarUser(data) {
+    user.valor++;
+    user.name = data.nombres;
+    user.lastName = data.apellidos;
+    user.numero = data.numero;
+    user.correo = data.correo;
+    user.pais = data.pais;
+    user.configuraciones.push(data);
+    console.log('User updated:', user);
+}
 const addValor = (valor) => {
     user["valor"] += valor;
     console.log(user);
