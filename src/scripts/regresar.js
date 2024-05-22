@@ -1,7 +1,5 @@
 // animacion-secciones.js
 import { SECTIONS as sect, BUTTONS as b } from './constantes';
-import { deleteValor} from './main'; 
-
 
 export let animacionSecciones = (sec1, sec2) => {
     setTimeout(() => {

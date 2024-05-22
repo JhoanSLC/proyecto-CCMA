@@ -1,42 +1,16 @@
 import { SECTIONS as sect, BUTTONS as b } from './constantes';
-
-export let user = {
-    "name":"",
-    "last-name":"",
-    "numero": 0,
-    "correo":"",
-    "pais":"",
-    "valor": 0,
-    "configuraciones": []
-};
-let op =0
+let PRECIO = document.getElementById('precio')
 
 
-export const deleteValor = () => {
-    let valorAnterior=addValor(val)
-    user.valor -= valorAnterior;
-    console.log(user.valor);
-    console.log(valorAnterior)
-};
 
 
-b.boton.addEventListener("click", () => {
-    user["name"] = b.userName.value;
-    user["last-name"] = b.userLastName.value;
-    user["numero"] = parseInt(b.userNumber.value, 10); 
-    user["correo"] = b.userCorreo.value;
-    user["pais"] = b.userPais.value;
-});
+let precioTotal = 0
 
+function formatCurrency(number) {
+    return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }).replace(/COP\s/, '');
+}
 
-export const addValor = (valor) => {
-    let valorAnterior = valor;
-    user.valor += valor; 
-    console.log(user.valor);
-    console.log(valorAnterior)
-    return valorAnterior; 
-    
-};
+const restarPrecio = (regButton)
 
 
 const addConfig = (config) => {
@@ -79,11 +53,14 @@ const ultimasConfig=()=>{
 const sections = () => {
     if (op==1) {
         b.sec2Android.addEventListener("click", () => {
-            addValor(9000000);
+            precioTotal = 9000000
+           
+            PRECIO.textContent = formatCurrency(precioTotal)
             addConfig("Android");
         });
         b.sec2AndroidIOS.addEventListener("click", () => {
-            addValor(15000000);
+            precioFinal += "15000000";
+            PRECIO.textContent = formatCurrency(precioTotal)
             addConfig("Android & IOS");
         });
         b.sec2Escritorio.addEventListener("click", () => {
@@ -103,7 +80,8 @@ const sections = () => {
             addConfig("No necesita");
         });
         b.sec3Sencilla.addEventListener("click", () => {
-            addValor(6000000);
+            precioTotal += 6000000
+            PRECIO.textContent = formatCurrency(precioTotal)
             addConfig("Sencilla");
         });
         b.sec3Personalizada.addEventListener("click", () => {
@@ -434,3 +412,4 @@ const sections = () => {
 
     }
 };
+

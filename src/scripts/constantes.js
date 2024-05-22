@@ -107,7 +107,6 @@ const sectFinal = document.getElementById('section-final')
 
 ///////////////////////////// LOGIN /////////////////////////////
 
-const boton = document.getElementById('loginButton');
 const userName = document.getElementById('nombre-usuario');
 const userLastName = document.getElementById('apellidos-usuario');
 const userPais = document.getElementById('pais-usuario');

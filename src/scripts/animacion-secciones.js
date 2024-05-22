@@ -1,5 +1,6 @@
+import Precio from '../components/precio.astro';
 import { SECTIONS as sect, BUTTONS as b} from './constantes'
-
+const precioContainer = document.getElementById('precio-container')
 
 const loginForm = document.getElementById('loginForm');
 
@@ -62,6 +63,16 @@ sec2Botones.forEach(boton => {
         
         boton.addEventListener('click', () => {
             isDesktop = false
+            precioContainer.style.display = "flex"
+            setTimeout(() => {
+                precioContainer.style.opacity="0.2"
+            }, 230)
+            setTimeout(() => {
+                precioContainer.style.opacity="0.5"
+            }, 270)
+            setTimeout(() => {
+                precioContainer.style.opacity="1"
+            }, 310)
             animacionSecciones(sect.section2, sect.section3)
         })
     }
