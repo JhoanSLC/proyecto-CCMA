@@ -3,7 +3,7 @@ import './animacion-secciones';
 import { SECTIONS as sect, BUTTONS as b } from './constantes';
 import './regresar'
 export let user = {
-    "nombre": document.getElementById("nombre").textContent,
+    "nombre": "",
     "apellidos":"",
     "telefono": 0,
     "correo":"",
@@ -13,9 +13,9 @@ export let user = {
 };
 export function actualizarUser(data) {
     user.valor++;
-    user.nombre = data.nombres;
+    user.nombre = data.nombre;
     user.apellidos = data.apellidos;
-    user.telefono = data.numero;
+    user.telefono = data.telefono;
     user.correo = data.correo;
     user.pais = data.pais;
     user.configuraciones.push(data);

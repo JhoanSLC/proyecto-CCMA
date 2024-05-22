@@ -1,8 +1,10 @@
-import { actualizarUser,user } from "./main";
+
+import { actualizarUser } from "./main.js";
 export function enviarDatosAMokapi(data) {
+
   const url = 'https://664a68e3a300e8795d41e736.mockapi.io/api/v1/users';
   fetch(url, {
-    method: 'PATCH',
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json' 
     },
@@ -27,11 +29,12 @@ export function enviarDatosAMokapi(data) {
 
 function enviarDatosLogin(event) {
   event.preventDefault(); 
-  const nombre = (document.getElementById('nombre-usuario')).value;
-  const apellidos = (document.getElementById('apellidos-usuario')).value;
-  const pais = (document.getElementById('pais-usuario')).value;
-  const telefono = (document.getElementById('telefono-usuario')).value;
-  const correo = user.correo
+  const nombre = document.getElementById('nombre-usuario').value;
+  const apellidos = document.getElementById('apellidos-usuario').value;
+  const pais = document.getElementById('pais-usuario').value;
+  const telefono = document.getElementById('telefono-usuario').value;
+  const correo = user.correo;
+
 
   // Construir el objeto de datos
   const data = {
@@ -45,9 +48,8 @@ function enviarDatosLogin(event) {
   enviarDatosAMokapi(data);
 
   const form = document.getElementById('loginForm');
-  form.reset();
-  }
-
+  form.reset(); // Limpia el formulario
+}
   // Agregar un listener al botón de login para llamar a la función enviarDatosLogin
   document.addEventListener('DOMContentLoaded', (event) => {
   const loginButton = document.getElementById('loginButton');
