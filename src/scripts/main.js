@@ -1,26 +1,4 @@
 
-import './animacion-secciones';
-import { SECTIONS as sect, BUTTONS as b } from './constantes';
-import './regresar'
-export let user = {
-    "nombre": "",
-    "apellidos":"",
-    "telefono": 0,
-    "correo":"",
-    "pais":"",
-    "valor": 0,
-    "configuraciones": []
-};
-export function actualizarUser(data) {
-    user.valor++;
-    user.nombre = data.nombre;
-    user.apellidos = data.apellidos;
-    user.telefono = data.telefono;
-    user.correo = data.correo;
-    user.pais = data.pais;
-    user.configuraciones.push(data);
-    console.log('User updated:', user);
-}
 const addValor = (valor) => {
     user["valor"] += valor;
     console.log(user);
