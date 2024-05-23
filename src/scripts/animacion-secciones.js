@@ -1,4 +1,4 @@
-import Precio from '../components/precio.astro';
+
 import { SECTIONS as sect, BUTTONS as b} from './constantes'
 const precioContainer = document.getElementById('precio-container')
 
@@ -39,7 +39,7 @@ loginForm.addEventListener('submit', (e) => {
         loginForm.reportValidity();
     }
 });
-let escritorioOno = [];
+
 // 1 - 2
 
 let sec1Botones = [b.sec1CalidadOptima, b.sec1CalidadPrecio, b.sec1NoImporta];

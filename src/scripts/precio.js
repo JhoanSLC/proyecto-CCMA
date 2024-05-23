@@ -1,36 +1,44 @@
 import { SECTIONS as sect, BUTTONS as b } from './constantes';
 let PRECIO = document.getElementById('precio')
+import { user } from './mockapi'
 
 
 
-
-let precioTotal = 0
+let precioTotal = [];
+let precioFinal = 0;
 
 function formatCurrency(number) {
     return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }).replace(/COP\s/, '');
 }
 
-const restarPrecio = (regButton)
+const restarPrecio = () => {
+        precioTotal.pop(precioTotal.length - 1);
+        precioFinal = Math.max(precioTotal);
+        PRECIO.textContent = formatCurrency(precioFinal);
+        
+}
 
-
-const addConfig = (config) => {
-    user["configuraciones"].push(config);
-    console.log(user["configuraciones"]);
-
+let op;
+let precio = 0
+const addConfig = (llave, valor) => {
+    user.configuraciones.llave = valor
 };
 
 b.sec1CalidadOptima.addEventListener("click", () => {
     op=1
+    addConfig("calidad", "óptima")
     sections();
 });
 
 b.sec1CalidadPrecio.addEventListener("click", () => {
     op=2
+    addConfig("calidad", "calidad/precio")
     sections();
 });
 
 b.sec1NoImporta.addEventListener("click", () => {
     op=3
+    addConfig("calidad", "no importa")
     sections();
 });
 
@@ -52,12 +60,18 @@ const ultimasConfig=()=>{
 
 const sections = () => {
     if (op==1) {
+        precioTotal = 0;
+        PRECIO.textContent = formatCurrency(precioTotal)
+
         b.sec2Android.addEventListener("click", () => {
-            precioTotal = 9000000
-           
-            PRECIO.textContent = formatCurrency(precioTotal)
+            precio = 9000000
+           precioTotal.push(precio)
+            precioFinal = Math.max(precioTotal)
+            console.log(precioFinal)
+            PRECIO.textContent = formatCurrency(precioFinal)
             addConfig("Android");
         });
+        
         b.sec2AndroidIOS.addEventListener("click", () => {
             precioFinal += "15000000";
             PRECIO.textContent = formatCurrency(precioTotal)
@@ -75,6 +89,9 @@ const sections = () => {
             addValor(9000000);
             addConfig("IOS");
         });
+
+        b.reg3.addEventListener('click', () => { restarPrecio()})
+
         b.sec3NoNecesita.addEventListener("click", () => {
             addValor(0);
             addConfig("No necesita");

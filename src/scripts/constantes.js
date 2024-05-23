@@ -134,7 +134,6 @@ export const SECTIONS = {
 }
 
 export const BUTTONS = {
-    boton,
     userName,
     userLastName,
     userPais,
