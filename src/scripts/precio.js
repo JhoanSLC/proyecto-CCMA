@@ -2,6 +2,8 @@ import { BUTTONS as b, SECTIONS_BUTTONS as sb} from './constantes';
 let PRECIO = document.getElementById('precio')
 import { user } from './mockapi'
 
+let precioFinal = Number;
+let thisPrecio = Number;
 
 
 let total = 0;
