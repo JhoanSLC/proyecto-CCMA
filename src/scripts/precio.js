@@ -1,25 +1,31 @@
-import { SECTIONS as sect, BUTTONS as b } from './constantes';
+import { BUTTONS as b } from './constantes';
 let PRECIO = document.getElementById('precio')
 import { user } from './mockapi'
 
-
-
-let precioTotal = [];
 let precioFinal = 0;
 
 function formatCurrency(number) {
-    return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }).replace(/COP\s/, '');
+    let formattedNumber = number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
+
+    formattedNumber = formattedNumber.replace(/\.00$/, '');
+
+    return formattedNumber;
 }
 
-const restarPrecio = () => {
-        precioTotal.pop(precioTotal.length - 1);
-        precioFinal = Math.max(precioTotal);
+const restarPrecio = (precio) => {
+        precioFinal -= precio
         PRECIO.textContent = formatCurrency(precioFinal);
         
 }
 
+const addValor = (precio) => {
+    let thisPrecio = precio
+    precioFinal += precio
+    PRECIO.textContent = formatCurrency(precioFinal)
+}
+
 let op;
-let precio = 0
+
 const addConfig = (llave, valor) => {
     user.configuraciones.llave = valor
 };
@@ -60,15 +66,11 @@ const ultimasConfig=()=>{
 
 const sections = () => {
     if (op==1) {
-        precioTotal = 0;
+        precioFinal = 0;
         PRECIO.textContent = formatCurrency(precioTotal)
 
         b.sec2Android.addEventListener("click", () => {
-            precio = 9000000
-           precioTotal.push(precio)
-            precioFinal = Math.max(precioTotal)
-            console.log(precioFinal)
-            PRECIO.textContent = formatCurrency(precioFinal)
+            addValor(9000000)
             addConfig("Android");
         });
         
