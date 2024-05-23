@@ -112,6 +112,7 @@ const userLastName = document.getElementById('apellidos-usuario');
 const userPais = document.getElementById('pais-usuario');
 const userNumber = document.getElementById('numero-usuario');
 const userCorreo = document.getElementById('correo-usuario');
+const loginReg = document.getElementById('loginReg')
 
 /////////////////// EXPORTACIÓN ////////////////
 
@@ -193,4 +194,5 @@ export const BUTTONS = {
     regFinal,
     crearProyecto,
     verInfo,
+    loginReg
 }
