@@ -5,51 +5,41 @@ import { user } from './mockapi'
 let precioFinal = Number;
 let thisPrecio = Number;
 
-function formatCurrency(number) {
-    let formattedNumber = number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
-    return formattedNumber;
-}
 
 const restarPrecio = (precio) => {
     precioFinal -= precio
-    thisPrecio = 0;
-    PRECIO.textContent = formatCurrency(precioFinal);
+    PRECIO.textContent = precioFinal;
     
 }
 
 const addValor = (precio) => {
     thisPrecio = precio;
     precioFinal += precio
-    PRECIO.textContent = formatCurrency(precioFinal)
+    PRECIO.textContent = precioFinal
 }
 
-let op;
 
 const addConfig = (newLlave, valor) => {
-    user.configuraciones.newllave = valor
+    user.configuraciones[newLlave] = valor
 }
 
-op = b.sec1CalidadOptima.addEventListener("click", () => {
-    precioFinal = 0;
-    thisPrecio = 0;
-    console.log(thisPrecio);
-    console.log(precioFinal)
+b.sec1CalidadOptima.addEventListener("click", () => {
+
     PRECIO.textContent = formatCurrency(precioFinal)
     addConfig("calidad", "óptima")
-    op = 1
     
 });
 
 b.sec1CalidadPrecio.addEventListener("click", () => {
     op=2
     addConfig("calidad", "calidad/precio")
-    sections();
+    
 });
 
 b.sec1NoImporta.addEventListener("click", () => {
     op=3
     addConfig("calidad", "no importa")
-    sections();
+    
 });
 
 const ultimasConfig=()=>{
@@ -67,8 +57,10 @@ const ultimasConfig=()=>{
         addConfig("Idea");
     });
 }
-
-
+b.EMPEZAR.addEventListener('click', () => {
+    sections(2)
+})
+const sections = (op) => {
     if (op==1) {
         
 
@@ -98,9 +90,7 @@ const ultimasConfig=()=>{
 
         b.reg3.addEventListener('click', () => { 
             restarPrecio(thisPrecio)
-            console.log(thisPrecio);
-            console.log(precioFinal)
-        });
+        })       
         b.sec3NoNecesita.addEventListener("click", () => {
             addValor(0);
             addConfig("No necesita");
@@ -198,7 +188,7 @@ const ultimasConfig=()=>{
             addConfig("Un Idioma")
         })
         ultimasConfig()
-        } else if (op==2) {
+    } else if (op== 2) {
         b.sec2Android.addEventListener("click", () => {
             addValor(6000000);
             addConfig("Android");
@@ -436,5 +426,5 @@ const ultimasConfig=()=>{
         })
 
     }
-
+};
 
