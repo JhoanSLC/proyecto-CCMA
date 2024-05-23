@@ -2,38 +2,42 @@ import { BUTTONS as b } from './constantes';
 let PRECIO = document.getElementById('precio')
 import { user } from './mockapi'
 
-let precioFinal = 0;
+let precioFinal = Number;
+let thisPrecio = Number;
 
 function formatCurrency(number) {
     let formattedNumber = number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
-
-    formattedNumber = formattedNumber.replace(/\.00$/, '');
-
     return formattedNumber;
 }
 
 const restarPrecio = (precio) => {
-        precioFinal -= precio
-        PRECIO.textContent = formatCurrency(precioFinal);
-        
+    precioFinal -= precio
+    thisPrecio = 0;
+    PRECIO.textContent = formatCurrency(precioFinal);
+    
 }
 
 const addValor = (precio) => {
-    let thisPrecio = precio
+    thisPrecio = precio;
     precioFinal += precio
     PRECIO.textContent = formatCurrency(precioFinal)
 }
 
 let op;
 
-const addConfig = (llave, valor) => {
-    user.configuraciones.llave = valor
-};
+const addConfig = (newLlave, valor) => {
+    user.configuraciones.newllave = valor
+}
 
-b.sec1CalidadOptima.addEventListener("click", () => {
-    op=1
+op = b.sec1CalidadOptima.addEventListener("click", () => {
+    precioFinal = 0;
+    thisPrecio = 0;
+    console.log(thisPrecio);
+    console.log(precioFinal)
+    PRECIO.textContent = formatCurrency(precioFinal)
     addConfig("calidad", "óptima")
-    sections();
+    op = 1
+    
 });
 
 b.sec1CalidadPrecio.addEventListener("click", () => {
@@ -64,19 +68,19 @@ const ultimasConfig=()=>{
     });
 }
 
-const sections = () => {
+
     if (op==1) {
-        precioFinal = 0;
-        PRECIO.textContent = formatCurrency(precioTotal)
+        
 
         b.sec2Android.addEventListener("click", () => {
-            addValor(9000000)
+            addValor(9000000);
+            console.log(thisPrecio);
+            console.log(precioFinal)
             addConfig("Android");
         });
         
         b.sec2AndroidIOS.addEventListener("click", () => {
-            precioFinal += "15000000";
-            PRECIO.textContent = formatCurrency(precioTotal)
+            addValor(15000000)
             addConfig("Android & IOS");
         });
         b.sec2Escritorio.addEventListener("click", () => {
@@ -92,15 +96,17 @@ const sections = () => {
             addConfig("IOS");
         });
 
-        b.reg3.addEventListener('click', () => { restarPrecio()})
-
+        b.reg3.addEventListener('click', () => { 
+            restarPrecio(thisPrecio)
+            console.log(thisPrecio);
+            console.log(precioFinal)
+        });
         b.sec3NoNecesita.addEventListener("click", () => {
             addValor(0);
             addConfig("No necesita");
         });
         b.sec3Sencilla.addEventListener("click", () => {
-            precioTotal += 6000000
-            PRECIO.textContent = formatCurrency(precioTotal)
+            addValor(6000000)
             addConfig("Sencilla");
         });
         b.sec3Personalizada.addEventListener("click", () => {
@@ -192,7 +198,7 @@ const sections = () => {
             addConfig("Un Idioma")
         })
         ultimasConfig()
-    } else if (op==2) {
+        } else if (op==2) {
         b.sec2Android.addEventListener("click", () => {
             addValor(6000000);
             addConfig("Android");
@@ -430,5 +436,5 @@ const sections = () => {
         })
 
     }
-};
+
 
