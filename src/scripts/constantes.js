@@ -133,13 +133,7 @@ export const SECTIONS = {
 
 }
 
-export const BUTTONS = {
-    userName,
-    userLastName,
-    userPais,
-    userNumber,
-    userCorreo,
-    EMPEZAR,
+export const SECTION_BUTTONS = {
     sec1CalidadOptima,
     sec1CalidadPrecio,
     sec1NoImporta,
@@ -176,6 +170,13 @@ export const BUTTONS = {
     sec10Desarrollada,
     sec10EnDesarrollo,
     sec10Idea,
+    secEscNativa,
+    secEscPwa,
+    secEscSpa,
+   
+}
+
+export const BUTTONS = {
     reg2,
     reg3,
     reg4,
@@ -184,13 +185,20 @@ export const BUTTONS = {
     reg7,
     reg8,
     reg9,
-    reg10,
+    reg10, 
+    
+}
+
+export const userButtons = {
     loginButton,
-    regEscritorio,
-    secEscNativa,
-    secEscPwa,
-    secEscSpa,
-    regFinal,
+    regEscritorio,  
     crearProyecto,
     verInfo,
+    userName,
+    userLastName,
+    userPais,
+    userNumber,
+    userCorreo,
+    EMPEZAR,
+    regFinal,
 }
