@@ -1,426 +1,124 @@
-import { SECTIONS as sect, BUTTONS as b } from './constantes';
+
+import { BUTTONS as b} from './constantes';
 let PRECIO = document.getElementById('precio')
 import { user } from './mockapi'
+const CalidaOptima = b.sections.sec1CalidadOptima;
+const calidadPrecio = b.sections.sec1CalidadPrecio;
+const noImporta = b.sections.sec1NoImporta;
+const buttonsList = [b.sections.sec1CalidadOptima,
+    b.sections.sec1CalidadPrecio,
+    b.sections.sec1NoImporta,
+    b.sections.sec2Android,
+    b.sections.sec2AndroidIOS,
+    b.sections.sec2Escritorio,
+    b.sections.sec2iOS,
+    b.sections.sec2Windows,
+    b.sections.sec3NoNecesita,
+    b.sections.sec3Personalizada,
+    b.sections.sec3RepWeb,
+    b.sections.sec3Sencilla,
+    b.sections.sec4Gratis,
+    b.sections.sec4InApp,
+    b.sections.sec4Otros,
+    b.sections.sec4Pago,
+    b.sections.sec5Email,
+    b.sections.sec5No,
+    b.sections.sec5NoSe,
+    b.sections.sec5Redes,
+    b.sections.sec6No,
+    b.sections.sec6NoSe,
+    b.sections.sec6Si,
+    b.sections.sec7No,
+    b.sections.sec7NoSe,
+    b.sections.sec7Si,
+    b.sections.sec8No,
+    b.sections.sec8NoSe,
+    b.sections.sec8Si,
+    b.sections.sec9Bilingue,
+    b.sections.sec9Multilingue,
+    b.sections.sec9UnIdioma,
+    b.sections.sec10Boceto,
+    b.sections.sec10Desarrollada,
+    b.sections.sec10EnDesarrollo,
+    b.sections.sec10Idea,
+    b.sections.secEscNativa,
+    b.sections.secEscPwa,
+    b.sections.secEscSpa]
+
+const DATA1 = "data-value";
+const DATA2 = "data-value2";
+const DATA3 = "data-value3";
+
+let precioTotal = 0;
+let option = 0;
+let isThisRunning = false;
 
 
+const addConfig = () => {}
 
-let precioTotal = 0
-
-function formatCurrency(number) {
-    return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }).replace(/COP\s/, '');
+const actualizarTotal=()=>{
+    PRECIO.textContent=pasarAMoneda()
+}
+const pasarAMoneda=()=>{
+    return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP'}).replace(/COP\s/,'')
+}
+const sumarValor =(valor)=>{
+    precioTotal+=valor
+    actualizarTotal()
+    
 }
 
-const restarPrecio = (precio) => {
-        precioTotal -= precio
-        PRECIO.textContent = formatCurrency(precioTotal)
+const sacarValor = (botonASacar, valorASacar) => {
+    return botonASacar.getAttribute(valorASacar)
 }
 
-let op;
-let precio = 0
-const addConfig = (llave, valor) => {
-    user.configuraciones.llave = valor
-};
+const proceso = (valorASacar, boton2, boton3) => {
+    if (isThisRunning) return;
 
-b.sec1CalidadOptima.addEventListener("click", () => {
-    op=1
-    addConfig("calidad", "óptima")
-    sections();
-});
-
-b.sec1CalidadPrecio.addEventListener("click", () => {
-    op=2
-    addConfig("calidad", "calidad/precio")
-    sections();
-});
-
-b.sec1NoImporta.addEventListener("click", () => {
-    op=3
-    addConfig("calidad", "no importa")
-    sections();
-});
-
-const ultimasConfig=()=>{
-
-    b.sec10Boceto.addEventListener("click" ,()=>{
-        addConfig("Boceto");
-    });
-    b.sec10Desarrollada.addEventListener("click" ,()=>{
-        addConfig("Desarrollada");
-    });
-    b.sec10EnDesarrollo.addEventListener("click" ,()=>{
-        addConfig("En Desarrollo");
-    });
-    b.sec10Idea.addEventListener("click" ,()=>{
-        addConfig("Idea");
-    });
-}
-
-const sections = () => {
-    if (op==1) {
-        b.reg2.addEventListener('click', () => {precioTotal = 0; PRECIO.textContent = formatCurrency(0)})
-
-        b.sec2Android.addEventListener("click", () => {
-            precio = 9000000
-            precioTotal += 9000000
-            PRECIO.textContent = formatCurrency(precioTotal)
-            addConfig("Android");
-        });
-        
-        b.sec2AndroidIOS.addEventListener("click", () => {
-            precioFinal += "15000000";
-            PRECIO.textContent = formatCurrency(precioTotal)
-            addConfig("Android & IOS");
-        });
-        b.sec2Escritorio.addEventListener("click", () => {
-            addValor(9000000);
-            addConfig("Escritorio");
-        });
-        b.sec2Windows.addEventListener("click", () => {
-            addValor(9000000);
-            addConfig("Windows");
-        });
-        b.sec2iOS.addEventListener("click", () => {
-            addValor(9000000);
-            addConfig("IOS");
-        });
-
-        b.reg3.addEventListener('click', () => { restarPrecio(precio)})
-
-        b.sec3NoNecesita.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No necesita");
-        });
-        b.sec3Sencilla.addEventListener("click", () => {
-            precioTotal += 6000000
-            PRECIO.textContent = formatCurrency(precioTotal)
-            addConfig("Sencilla");
-        });
-        b.sec3Personalizada.addEventListener("click", () => {
-            addValor(18000000);
-            addConfig("Personalizada");
-        });
-        b.sec3RepWeb.addEventListener("click", () => {
-            addValor(12000000);
-            addConfig("Replica Web");
-        });
-        b.sec4Gratis.addEventListener("click", () => {
-            addValor(750000);
-            addConfig("Gratis");
-        });
-        b.sec4Pago.addEventListener("click", () => {
-            addValor(750000);
-            addConfig("Pago");
-        });
-        b.sec4InApp.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("In-App");
-        });
-        b.sec4Otros.addEventListener("click", () => {
-            addValor(1500000);
-            addConfig("Otros");
-        });
-        b.sec5Redes.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Redes Sociales");
-        });
-        b.sec5Email.addEventListener("click", () => {
-            addValor(3750000);
-            addConfig("Email");
-        });
-        b.sec5No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec5NoSe.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("No Sé");
-        });
-        b.sec6Si.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Si");
-        });
-        b.sec6No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec6NoSe.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Nose");
-        });
-        b.sec7Si.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Si");
-        });
-        b.sec7No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec7NoSe.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Nose");
-        });
-        b.sec8Si.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Si");
-        });
-        b.sec8No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec8NoSe.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Nose");
-        });
-        b.sec9UnIdioma.addEventListener("click",()=>{
-            addValor(0)
-            addConfig("Un Idioma")
+    isThisRunning = true;
+   
+    for (let boton of buttonsList){ 
+            boton.addEventListener('click', () => {
+            let botonValor = sacarValor(boton, valorASacar)
+            console.log(botonValor)
         })
-        b.sec9Bilingue.addEventListener("click",()=>{
-            addValor(3000000)
-            addConfig("Un Idioma")
-        })
-        b.sec9Multilingue.addEventListener("click",()=>{
-            addValor(6000000)
-            addConfig("Un Idioma")
-        })
-        ultimasConfig()
-    } else if (op==2) {
-        b.sec2Android.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Android");
-        });
-        b.sec2AndroidIOS.addEventListener("click", () => {
-            addValor(10000000);
-            addConfig("Android & IOS");
-        });
-        b.sec2Escritorio.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Escritorio");
-        });
-        b.sec2Windows.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Windows");
-        });
-        b.sec2iOS.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("IOS");
-        });
-        b.sec3NoNecesita.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No necesita");
-        });
-        b.sec3Sencilla.addEventListener("click", () => {
-            addValor(4000000);
-            addConfig("Sencilla");
-        });
-        b.sec3Personalizada.addEventListener("click", () => {
-            addValor(12000000);
-            addConfig("Personalizada");
-        });
-        b.sec3RepWeb.addEventListener("click", () => {
-            addValor(8000000);
-            addConfig("Replica Web");
-        });
-        b.sec4Gratis.addEventListener("click", () => {
-            addValor(500000);
-            addConfig("Gratis");
-        });
-        b.sec4Pago.addEventListener("click", () => {
-            addValor(500000);
-            addConfig("Pago");
-        });
-        b.sec4InApp.addEventListener("click", () => {
-            addValor(4000000);
-            addConfig("In-App");
-        });
-        b.sec4Otros.addEventListener("click", () => {
-            addValor(1000000);
-            addConfig("Otros");
-        });
-        b.sec5Redes.addEventListener("click", () => {
-            addValor(4000000);
-            addConfig("Redes Sociales");
-        });
-        b.sec5Email.addEventListener("click", () => {
-            addValor(2500000);
-            addConfig("Email");
-        });
-        b.sec5No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec5NoSe.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("No Sé");
-        });
-        
-        b.sec6Si.addEventListener("click", () => {
-            addValor(4000000);
-            addConfig("Si");
-        });
-        b.sec6No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec6NoSe.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("Nose");
-        });
-        b.sec7Si.addEventListener("click", () => {
-            addValor(4000000);
-            addConfig("Si");
-        });
-        b.sec7No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec7NoSe.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("Nose");
-        });
-        b.sec8Si.addEventListener("click", () => {
-            addValor(4000000);
-            addConfig("Si");
-        });
-        b.sec8No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec8NoSe.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("Nose");
-        });
-        b.sec9UnIdioma.addEventListener("click",()=>{
-            addValor(0)
-            addConfig("Un Idioma")
-        })
-        b.sec9Bilingue.addEventListener("click",()=>{
-            addValor(2000000)
-            addConfig("Bilingue")
-        })
-        b.sec9Multilingue.addEventListener("click",()=>{
-            addValor(4000000)
-            addConfig("Multibilingue")
-        })
-        ultimasConfig()
-    } else {
-        b.sec2Android.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Android");
-        });
-        b.sec2AndroidIOS.addEventListener("click", () => {
-            addValor(5000000);
-            addConfig("Android & IOS");
-        });
-        b.sec2Escritorio.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Escritorio");
-        });
-        b.sec2Windows.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("Windows");
-        });
-        b.sec2iOS.addEventListener("click", () => {
-            addValor(3000000);
-            addConfig("IOS");
-        });
-        b.sec3NoNecesita.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No necesita");
-        });
-        b.sec3Sencilla.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("Sencilla");
-        });
-        b.sec3Personalizada.addEventListener("click", () => {
-            addValor(6000000);
-            addConfig("Personalizada");
-        });
-        b.sec3RepWeb.addEventListener("click", () => {
-            addValor(4000000);
-            addConfig("Replica Web");
-        });
-        b.sec4Gratis.addEventListener("click", () => {
-            addValor(250000);
-            addConfig("Gratis");
-        });
-        b.sec4Pago.addEventListener("click", () => {
-            addValor(250000);
-            addConfig("Pago");
-        });
-        b.sec4InApp.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("In-App");
-        });
-        b.sec4Otros.addEventListener("click", () => {
-            addValor(500000);
-            addConfig("Otros");
-        });
-        b.sec5Redes.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("Redes Sociales");
-        });
-        b.sec5Email.addEventListener("click", () => {
-            addValor(1250000);
-            addConfig("Email");
-        });
-        b.sec5No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec5NoSe.addEventListener("click", () => {
-            addValor(1000000);
-            addConfig("No Sé");
-        });
-        b.sec6Si.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("Si");
-        });
-        b.sec6No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec6NoSe.addEventListener("click", () => {
-            addValor(1000000);
-            addConfig("Nose");
-        });
-        b.sec7Si.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("Si");
-        });
-        b.sec7No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec7NoSe.addEventListener("click", () => {
-            addValor(1000000);
-            addConfig("Nose");
-        });
-        b.sec8Si.addEventListener("click", () => {
-            addValor(2000000);
-            addConfig("Si");
-        });
-        b.sec8No.addEventListener("click", () => {
-            addValor(0);
-            addConfig("No");
-        });
-        b.sec8NoSe.addEventListener("click", () => {
-            addValor(1000000);
-            addConfig("Nose");
-        });
-        b.sec9UnIdioma.addEventListener("click",()=>{
-            addValor(0)
-            addConfig("Un Idioma")
-        })
-        b.sec9Bilingue.addEventListener("click",()=>{
-            addValor(1000000)
-            addConfig("Un Idioma")
-        })
-        b.sec9Multilingue.addEventListener("click",()=>{
-            addValor(2000000)
-            addConfig("Un Idioma")
-        })
-
     }
-};
+
+    boton2.addEventListener('click', () => {
+        isThisRunning = false;
+    })
+
+    // Botón para detener el proceso actual
+    boton3.addEventListener('click', () => {
+        isThisRunning = false;
+    })
+
+}
+
+b.sections.sec1CalidadOptima.addEventListener('click', () => {
+   proceso(DATA1, calidadPrecio, noImporta)  
+})
+b.sections.sec1CalidadPrecio.addEventListener('click', () => {
+    proceso(DATA2)
+})
+b.sections.sec1NoImporta.addEventListener('click', () => {
+    proceso(DATA3)
+   
+})
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
 

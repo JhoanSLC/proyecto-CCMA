@@ -1,4 +1,4 @@
-import { SECTIONS as sect, BUTTONS as b } from './constantes';
+import { BUTTONS as b} from './constantes';
 
 export let user = {
     "name":"",
@@ -6,8 +6,20 @@ export let user = {
     "numero": 0,
     "correo":"",
     "pais":"",
-    "valor": 0,
-    "configuraciones": {}
+    "precioFinal": 0,
+    "configuraciones": {
+        "calidad" : "",
+        "tipo de app" : "",
+        "tipo de escritorio" : "",
+        "tipo de diseño" : "",
+        "como sacaras beneficio" : "",
+        "¿sistema de login?" : "",
+        "¿integrada a web?" : "",
+        "¿perfiles propios?" : "",
+        "¿panel de admin?" : "",
+        "idioma" : "",
+        "nivel de app" : "",
+    }
 };
 let op =0
 
@@ -36,11 +48,11 @@ async function enviarDatos(apiUrl, data) {
 }
 
 b.loginButton.addEventListener("click", () => {
-    user["name"] = b.userName.value;
-    user["last-name"] = b.userLastName.textContent;
-    user["numero"] = b.userLastName.textContent; 
-    user["correo"] = b.userCorreo.textContent;
-    user["pais"] = b.userPais.textContent;
+    user.nombre = b.userName.value;
+    user.apellido = b.userLastName.value;
+    user.numero = b.userNumber.value; 
+    user.email = b.userCorreo.value;
+    user.pais = b.userPais.value;
     // Llama a la función para enviar los datos
     enviarDatos(url, user);
     
