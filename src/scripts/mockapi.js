@@ -10,7 +10,6 @@ export let user = {
     "configuraciones": {
         "calidad" : "",
         "tipo de app" : "",
-        "tipo de escritorio" : "",
         "tipo de diseño" : "",
         "como sacaras beneficio" : "",
         "¿sistema de login?" : "",

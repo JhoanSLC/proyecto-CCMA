@@ -7,130 +7,130 @@ import Precio from "./precio.astro";
 <div >
 
     <QuestionSec section="section-1" numero="1/10" pregunta="¿Qué nivel de calidad estás buscando?"> 
-        <Card classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-1/calidadOptima.png" txt="Calidad óptima" ident="calidad-optima" /> 
+        <Card config="Calidad Optima"classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-1/calidadOptima.png" txt="Calidad óptima" ident="calidad-optima" /> 
         
-        <Card classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-1/calidadPrecio.png" txt="Buena relación calidad/precio" ident="calidad-precio" />
+        <Card config="Buena relacion calidad/precio" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-1/calidadPrecio.png" txt="Buena relación calidad/precio" ident="calidad-precio" />
     
-        <Card classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-1/noImportaLaCalidad.png" txt="No me importa tanto la calidad" ident="no-importa-calidad" />
+        <Card config="No importa" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-1/noImportaLaCalidad.png" txt="No me importa tanto la calidad" ident="no-importa-calidad" />
     
     </QuestionSec>
     
     <QuestionSec section="section-2" numero="2/10" pregunta="¿Qué tipo de App necesitas?"> 
         <Regresar regid="reg2" slot="regresar" />
-        <Card val1="9000000" val2="6000000" val3="3000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card1" imagen="../../public/section-2/android.png" txt="Aplicación android" ident="android" /> 
+        <Card config="Android" val1="9000000" val2="6000000" val3="3000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card1" imagen="../../public/section-2/android.png" txt="Aplicación android" ident="android" /> 
         
-        <Card val1="9000000" val2="6000000" val3="3000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card2" imagen="../../public/section-2/ios.png" txt="Aplicación iOS" ident="ios" />
+        <Card config="iOS" val1="9000000" val2="6000000" val3="3000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card2" imagen="../../public/section-2/ios.png" txt="Aplicación iOS" ident="ios" />
     
-        <Card val1="9000000" val2="6000000" val3="3000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card3" imagen="../../public/section-2/windows-phone.png" txt="Aplicación Windows phone" ident="windowsPhone" />
+        <Card config="Windows Phone" val1="9000000" val2="6000000" val3="3000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card3" imagen="../../public/section-2/windows-phone.png" txt="Aplicación Windows phone" ident="windowsPhone" />
     
-        <Card val1="15000000" val2="10000000" val3="5000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card4" imagen="../../public/section-2/android-ios.png" txt="Aplicación Android + iOS" ident="android-ios" />
+        <Card config="Android + iOS" val1="15000000" val2="10000000" val3="5000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card4" imagen="../../public/section-2/android-ios.png" txt="Aplicación Android + iOS" ident="android-ios" />
     
-        <Card val="9000000" val2="6000000" val3="3000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card5" imagen="../../public/section-1/este.png" txt="Aplicación de escritorio" ident="escritorio" />
+        <Card config="Escritorio" val="9000000" val2="6000000" val3="3000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card5" imagen="../../public/section-1/este.png" txt="Aplicación de escritorio" ident="escritorio" />
     
     </QuestionSec> 
     
     <QuestionSec section="section-escritorio" numero="2.5/10" pregunta="¿Qué tipo de app de escritorio será?">
         <Regresar regid="regEscritorio" slot="regresar" />
-        <Card val1="6000000" val2="3000000" val3="2000000" classes=" w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-6/si.png" txt="PWA" ident="pwa" /> 
+        <Card config="" val1="6000000" val2="3000000" val3="2000000" classes=" w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-6/si.png" txt="PWA" ident="pwa" /> 
         
-        <Card val1="9000000" val2="6000000" val3="3000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-6/no.png" txt="SPA" ident="spa" />
+        <Card config="" val1="9000000" val2="6000000" val3="3000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-6/no.png" txt="SPA" ident="spa" />
     
-        <Card val1="10000000" val2="7000000" val3="5000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-6/noSe.png" txt="Nativa" ident="nativa" />
+        <Card config="" val1="10000000" val2="7000000" val3="5000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-6/noSe.png" txt="Nativa" ident="nativa" />
     
     </QuestionSec>
     
     <QuestionSec section="section-3" numero="3/10" pregunta="¿Qué diseño quieres que tenga tu App?"> 
         <Regresar regid="reg3" slot="regresar" />
-        <Card val1="6000000" val2="4000000" val3="2000000" classes="w-[200px] h-[130px] sm:w-[240px] sm:h-[246px]"slot="card1" imagen="../../public/section-3/sencilla.png" txt="Interfaz sencilla" ident="interfaz-sencilla" /> 
+        <Card config="Interfaz Sencilla" val1="6000000" val2="4000000" val3="2000000" classes="w-[200px] h-[130px] sm:w-[240px] sm:h-[246px]"slot="card1" imagen="../../public/section-3/sencilla.png" txt="Interfaz sencilla" ident="interfaz-sencilla" /> 
         
-        <Card val1="18000000" val2="12000000" val3="6000000" classes="w-[200px] h-[130px] sm:w-[240px] sm:h-[246px]"slot="card2" imagen="../../public/section-3/personalizada.png" txt="Interfaz personalizada" ident="personalizada" />
+        <Card config="Interfaz Personalizada" val1="18000000" val2="12000000" val3="6000000" classes="w-[200px] h-[130px] sm:w-[240px] sm:h-[246px]"slot="card2" imagen="../../public/section-3/personalizada.png" txt="Interfaz personalizada" ident="personalizada" />
     
-        <Card val1="12000000" val2="8000000" val3="4000000" classes="w-[200px] h-[130px] sm:w-[240px] sm:h-[246px]"slot="card3" imagen="../../public/section-3/web.png" txt="Interfaz replicada de la web" ident="replica-web" />
+        <Card config="Replicada de la wed" val1="12000000" val2="8000000" val3="4000000" classes="w-[200px] h-[130px] sm:w-[240px] sm:h-[246px]"slot="card3" imagen="../../public/section-3/web.png" txt="Interfaz replicada de la web" ident="replica-web" />
     
-        <Card val1="0,0,0" classes="w-[200px] h-[130px] sm:w-[240px] sm:h-[246px]"slot="card4" imagen="../../public/section-3/sinDiseño.png" txt="No necesito diseño" ident="sin-diseño" />
+        <Card config="No necesita diseño" val1="0,0,0" classes="w-[200px] h-[130px] sm:w-[240px] sm:h-[246px]"slot="card4" imagen="../../public/section-3/sinDiseño.png" txt="No necesito diseño" ident="sin-diseño" />
     
     </QuestionSec>
     
     <QuestionSec section="section-4" numero="4/10" pregunta="¿Cómo quieres sacar beneficio de tu App?"> 
         <Regresar regid="reg4" slot="regresar" />
         
-        <Card val1="7500000" val2="5000000" val3="2500000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card1" imagen="../../public/section-4/free.png" txt="Aplicación gratuita con publicidad" ident="app-gratis" /> 
+        <Card config="Gratuita con Publicidad" val1="7500000" val2="5000000" val3="2500000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card1" imagen="../../public/section-4/free.png" txt="Aplicación gratuita con publicidad" ident="app-gratis" /> 
         
-        <Card val1="7500000" val2="5000000" val3="2500000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card2" imagen="../../public/section-4/pago.png" txt="Aplicación de pago" ident="app-pago" />
+        <Card config="De pago" val1="7500000" val2="5000000" val3="2500000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card2" imagen="../../public/section-4/pago.png" txt="Aplicación de pago" ident="app-pago" />
     
-        <Card val1="6000000" val2="4000000" val3="2000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card3" imagen="../../public/section-4/comprasEnApp.png" txt="Compras dentro de la app" ident="compras-in-app" />
+        <Card config="Compras en la App" val1="6000000" val2="4000000" val3="2000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card3" imagen="../../public/section-4/comprasEnApp.png" txt="Compras dentro de la app" ident="compras-in-app" />
     
-        <Card val1="15000000" val2="10000000" val3="5000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card4" imagen="../../public/section-4/otros.png" txt="Otros / No lo sé todavía" ident="otros" />
+        <Card config="Otros/No lo se" val1="15000000" val2="10000000" val3="5000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card4" imagen="../../public/section-4/otros.png" txt="Otros / No lo sé todavía" ident="otros" />
     
     </QuestionSec>
     
     <QuestionSec section="section-5" numero="5/10" pregunta="¿Tu App necesita un sistema de login?"> 
         <Regresar regid="reg5" slot="regresar" />
         
-        <Card val1="6000000" val2="4000000" val3="2000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card1" imagen="../../public/section-5/redes.png" txt="Sí, con redes sociales y email" ident="redes-email" /> 
+        <Card config="Redes sociales y Email" val1="6000000" val2="4000000" val3="2000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card1" imagen="../../public/section-5/redes.png" txt="Sí, con redes sociales y email" ident="redes-email" /> 
         
-        <Card val1="3750000" val2="2500000" val3="1250000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card2" imagen="../../public/section-5/email.png" txt="Sí, con email" ident="email" />
+        <Card config="Email" val1="3750000" val2="2500000" val3="1250000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card2" imagen="../../public/section-5/email.png" txt="Sí, con email" ident="email" />
     
-        <Card val1="0" val2="0" val3="0" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card3" imagen="../../public/section-5/no.png" txt="No" ident="sec5-no" />
+        <Card config="No" val1="0" val2="0" val3="0" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card3" imagen="../../public/section-5/no.png" txt="No" ident="sec5-no" />
     
-        <Card val1="3000000" val2="2000000" val3="1000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card4" imagen="../../public/section-5/noSe.png" txt="No lo sé todavía" ident="sec5-nose" />
+        <Card config="No lo se" val1="3000000" val2="2000000" val3="1000000" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card4" imagen="../../public/section-5/noSe.png" txt="No lo sé todavía" ident="sec5-nose" />
     
     </QuestionSec>
     
     <QuestionSec section="section-6" numero="6/10" pregunta="¿Tu App tiene que estar integrada con un sitio web?"> 
         <Regresar regid="reg6" slot="regresar" />
         
-        <Card val1="6000000" val2="4000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-6/si.png" txt="Sí" ident="sec6-si" /> 
+        <Card config="Si" val1="6000000" val2="4000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-6/si.png" txt="Sí" ident="sec6-si" /> 
         
-        <Card val1="0" val2="0" val3="0" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-6/no.png" txt="No" ident="sec6-no" />
+        <Card config="No" val1="0" val2="0" val3="0" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-6/no.png" txt="No" ident="sec6-no" />
     
-        <Card val1="3000000" val2="200000" val3="1000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-6/noSe.png" txt="No lo sé" ident="sec6-nose" />
+        <Card config="No lo se" val1="3000000" val2="200000" val3="1000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-6/noSe.png" txt="No lo sé" ident="sec6-nose" />
     
     </QuestionSec>
     
     <QuestionSec section="section-7" numero="7/10" pregunta="¿Los usuarios tienen sus propios perfiles?"> 
         <Regresar regid="reg7" slot="regresar" />
         
-        <Card val1="6000000" val2="4000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-7/si.png" txt="Sí" ident="sec7-si" /> 
+        <Card config="Si" val1="6000000" val2="4000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-7/si.png" txt="Sí" ident="sec7-si" /> 
         
-        <Card val1="0" val2="0" val3="0" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-7/no.png" txt="No" ident="sec7-no" />
+        <Card config="No" val1="0" val2="0" val3="0" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-7/no.png" txt="No" ident="sec7-no" />
     
-        <Card val1="3000000" val2="2000000" val3="1000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-7/noSe.png" txt="No lo sé" ident="sec7-nose" />
+        <Card config="No lo se" val1="3000000" val2="2000000" val3="1000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-7/noSe.png" txt="No lo sé" ident="sec7-nose" />
     
     </QuestionSec>
     
     <QuestionSec section="section-8" numero="8/10" pregunta="¿Tu app necesita un panel de administración?"> 
         <Regresar regid="reg8" slot="regresar" />
         
-        <Card val1="6000000" val2="4000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-8/si.png" txt="Sí" ident="sec8-si" /> 
+        <Card config="Si" val1="6000000" val2="4000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-8/si.png" txt="Sí" ident="sec8-si" /> 
         
-        <Card val1="0" val2="0" val3="0" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-8/no.png" txt="No" ident="sec8-no" />
+        <Card config="No" val1="0" val2="0" val3="0" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-8/no.png" txt="No" ident="sec8-no" />
     
-        <Card val1="3000000" val2="2000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-8/noSe.png" txt="No lo sé" ident="sec8-nose" />
+        <Card config="No lo se" val1="3000000" val2="2000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-8/noSe.png" txt="No lo sé" ident="sec8-nose" />
     
     </QuestionSec>
     
     <QuestionSec section="section-9" numero="9/10" pregunta="¿Qué idiomas usará tu aplicación?"> 
         <Regresar regid="reg9" slot="regresar" />
         
-        <Card val1="0" val2="0" val3="0" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-9/unIdioma.png" txt="Un único idioma" ident="unico-idioma" /> 
+        <Card config="Un idioma" val1="0" val2="0" val3="0" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card1" imagen="../../public/section-9/unIdioma.png" txt="Un único idioma" ident="unico-idioma" /> 
         
-        <Card val1="3000000" val2="2000000" val3="1000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-9/bilingue.png" txt="Bilingüe" ident="bilingue" />
+        <Card config="Bilingue" val1="3000000" val2="2000000" val3="1000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card2" imagen="../../public/section-9/bilingue.png" txt="Bilingüe" ident="bilingue" />
     
-        <Card val1="6000000" val2="4000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-9/multilingue.png" txt="Multilingüe" ident="multilingue" />
+        <Card config="Multibilingue" val1="6000000" val2="4000000" val3="2000000" classes="w-[160px] h-[130px] sm:w-[200px] sm:h-[200px]"slot="card3" imagen="../../public/section-9/multilingue.png" txt="Multilingüe" ident="multilingue" />
     
     </QuestionSec>
     
     <QuestionSec section="section-10" numero="10/10" pregunta="¿Tu App necesita un sistema de login?"> 
         <Regresar regid="reg10" slot="regresar" />
         
-        <Card classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card1" imagen="../../public/section-10/idea.png" txt="Sólo es una idea" ident="idea" /> 
+        <Card config="Solo es una idea" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card1" imagen="../../public/section-10/idea.png" txt="Sólo es una idea" ident="idea" /> 
         
-        <Card classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card2" imagen="../../public/section-10/boceto.png" txt="Boceto ya preparado" ident="boceto" />
+        <Card config="Boceto ya Preparado" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card2" imagen="../../public/section-10/boceto.png" txt="Boceto ya preparado" ident="boceto" />
     
-        <Card classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card3" imagen="../../public/section-10/enDesarrollo.png" txt="App en desarrollo" ident="enDesarrollo" />
+        <Card config="App en Desarrollo" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card3" imagen="../../public/section-10/enDesarrollo.png" txt="App en desarrollo" ident="enDesarrollo" />
     
-        <Card classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card4" imagen="../../public/section-10/desarrollada.png" txt="App ya desarrollada" ident="desarrollada" />
+        <Card config="App ya Desarrollada" classes="w-[140px] h-[200px] sm:w-[180px] sm:h-[230]" slot="card4" imagen="../../public/section-10/desarrollada.png" txt="App ya desarrollada" ident="desarrollada" />
     
     </QuestionSec>
 </div>
