@@ -3,13 +3,14 @@ const { imagen } = Astro.props
 const { txt } = Astro.props
 const { ident } = Astro.props
 const { classes } = Astro.props
+const { config } =Astro.props
 const { val1, val2, val3 } = Astro.props
 const baseClasses  = "flex flex-col items-center hover:-translate-y-2 cursor-pointer rounded-md ] duration-300 hover:bg-neutral-600 transition-all justify-center"
 const finalClasses = `${classes} ${baseClasses}`
 ---
 
 
-<section id={ident} class={finalClasses} data-value={val1} data-value2={val2} data-value3={val3}>
+<section data-config={config} id={ident} class={finalClasses} data-value={val1} data-value2={val2} data-value3={val3}>
     <img class="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[150px] md:h-[150px]" src={imagen} alt="">
     <p class="mt-3 text-[10px] md:text-sm">{txt}</p>
 </section>

@@ -44,43 +44,69 @@ const buttonsList = [b.sections.sec1CalidadOptima,
     b.sections.secEscNativa,
     b.sections.secEscPwa,
     b.sections.secEscSpa]
-
+const DATA4="data-config"
 const DATA1 = "data-value";
 const DATA2 = "data-value2";
 const DATA3 = "data-value3";
-
+export let botonValor=""
+export let botonConfig=[]
 let precioTotal = 0;
 let option = 0;
 let isThisRunning = false;
 
 
-const addConfig = () => {}
-
-const actualizarTotal=()=>{
-    PRECIO.textContent=pasarAMoneda()
+const addConfig = () => {
+    user.configuraciones['tipo de app']=botonConfig[0]
+    user.configuraciones['tipo de escritorio']=botonConfig[1]
+    user.configuraciones['tipo de diseño']=botonConfig[1]
+    user.configuraciones['como sacaras beneficio']=botonConfig[2]
+    user.configuraciones['¿sistema de login?']=botonConfig[3]
+    user.configuraciones['¿integrada a web?']=botonConfig[4]
+    user.configuraciones['¿perfiles propios?']=botonConfig[5]
+    user.configuraciones['¿panel de admin?']=botonConfig[6]
+    user.configuraciones['idioma']=botonConfig[7]
+    user.configuraciones['nivel de app']=botonConfig[8]
+    console.log(user)
 }
-const pasarAMoneda=()=>{
+
+const actualizarTotal=(precioTotal)=>{
+    PRECIO.textContent=pasarAMoneda(precioTotal)
+}
+const pasarAMoneda=(number)=>{
     return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP'}).replace(/COP\s/,'')
 }
 const sumarValor =(valor)=>{
-    precioTotal+=valor
-    actualizarTotal()
+    precioTotal+=Number(valor)
+    actualizarTotal(precioTotal)
+    addValor(precioTotal)
     
 }
+export const restarValor = (valor) => {
+    precioTotal -= Number(valor);
+    actualizarTotal(precioTotal);
+    addValor(precioTotal);
+};
 
 const sacarValor = (botonASacar, valorASacar) => {
     return botonASacar.getAttribute(valorASacar)
 }
+const addValor = (valor)  =>{
+    user["precioFinal"]=valor
+}
 
-const proceso = (valorASacar, boton2, boton3) => {
+const proceso = (valorASacar, boton2, boton3, valor2Asacar) => {
     if (isThisRunning) return;
 
     isThisRunning = true;
    
     for (let boton of buttonsList){ 
             boton.addEventListener('click', () => {
-            let botonValor = sacarValor(boton, valorASacar)
-            console.log(botonValor)
+            botonValor = sacarValor(boton, valorASacar)
+            botonConfig.push(sacarValor(boton,valor2Asacar)) 
+            console.log(botonConfig)
+            sumarValor(botonValor)
+            addConfig()
+            
         })
     }
 
@@ -96,13 +122,14 @@ const proceso = (valorASacar, boton2, boton3) => {
 }
 
 b.sections.sec1CalidadOptima.addEventListener('click', () => {
-   proceso(DATA1, calidadPrecio, noImporta)  
+   proceso(DATA1, calidadPrecio, noImporta,DATA4)
+  
 })
 b.sections.sec1CalidadPrecio.addEventListener('click', () => {
-    proceso(DATA2)
+    proceso(DATA2, CalidaOptima,noImporta,DATA4)
 })
 b.sections.sec1NoImporta.addEventListener('click', () => {
-    proceso(DATA3)
+    proceso(DATA3,calidadPrecio,CalidaOptima,DATA4)
    
 })
 
