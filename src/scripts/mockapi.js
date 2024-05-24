@@ -1,18 +1,18 @@
-import { userButtons as ub} from './constantes';
+import { SECTIONS as sect, BUTTONS as b } from './constantes';
 
 export let user = {
-    "nombre":"",
-    "apellido":"",
+    "name":"",
+    "last-name":"",
     "numero": 0,
-    "email":"",
+    "correo":"",
     "pais":"",
-    "precioFinal": 0,
+    "valor": 0,
     "configuraciones": {}
 };
 let op =0
 
 
-const url = 'https://664e7c36fafad45dfae02f85.mockapi.io/users'; 
+const url = 'https://664e7c36fafad45dfae02f85.mockapi.io/users'; // Reemplaza con tu URL de MockAPI
 
 async function enviarDatos(apiUrl, data) {
     try {
@@ -36,11 +36,11 @@ async function enviarDatos(apiUrl, data) {
 }
 
 b.loginButton.addEventListener("click", () => {
-    user.nombre = ub.userName.value;
-    user.apellido = ub.userLastName.value;
-    user.numero = ub.userLastName.value; 
-    user.email = ub.userCorreo.value;
-    user.pais = ub.userPais.value;
+    user["name"] = b.userName.value;
+    user["last-name"] = b.userLastName.textContent;
+    user["numero"] = b.userLastName.textContent; 
+    user["correo"] = b.userCorreo.textContent;
+    user["pais"] = b.userPais.textContent;
     // Llama a la función para enviar los datos
     enviarDatos(url, user);
     

@@ -112,7 +112,6 @@ const userLastName = document.getElementById('apellidos-usuario');
 const userPais = document.getElementById('pais-usuario');
 const userNumber = document.getElementById('numero-usuario');
 const userCorreo = document.getElementById('correo-usuario');
-const loginReg = document.getElementById('loginReg')
 
 /////////////////// EXPORTACIÓN ////////////////
 
@@ -134,7 +133,13 @@ export const SECTIONS = {
 
 }
 
-export const SECTION_BUTTONS = {
+export const BUTTONS = {
+    userName,
+    userLastName,
+    userPais,
+    userNumber,
+    userCorreo,
+    EMPEZAR,
     sec1CalidadOptima,
     sec1CalidadPrecio,
     sec1NoImporta,
@@ -171,13 +176,6 @@ export const SECTION_BUTTONS = {
     sec10Desarrollada,
     sec10EnDesarrollo,
     sec10Idea,
-    secEscNativa,
-    secEscPwa,
-    secEscSpa,
-   
-}
-
-export const BUTTONS = {
     reg2,
     reg3,
     reg4,
@@ -186,20 +184,13 @@ export const BUTTONS = {
     reg7,
     reg8,
     reg9,
-    reg10, 
-    
-}
-
-export const userButtons = {
+    reg10,
     loginButton,
-    regEscritorio,  
+    regEscritorio,
+    secEscNativa,
+    secEscPwa,
+    secEscSpa,
+    regFinal,
     crearProyecto,
     verInfo,
-    userName,
-    userLastName,
-    userPais,
-    userNumber,
-    userCorreo,
-    EMPEZAR,
-    regFinal,
 }

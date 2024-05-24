@@ -1,61 +1,426 @@
-import { BUTTONS as b, SECTIONS_BUTTONS as sb} from './constantes';
+import { SECTIONS as sect, BUTTONS as b } from './constantes';
 let PRECIO = document.getElementById('precio')
 import { user } from './mockapi'
 
-let precioFinal = Number;
-let thisPrecio = Number;
 
 
-let total = 0;
-valoresPresionados = [];
+let precioTotal = 0
 
-function actualizarTotal() {
-    PRECIO.textContent = total.toLocaleString('es-CO', { minimumFractionDigits: 0 });
-}
-
-const sumarValor = (valor, boton) => {
-    const valores = boton.getAttribute('data-value').split(',').map(Number);
-    const valor = valores[valor]; 
-    total += valor;
-    valoresPresionados.push(valor);
-    actualizarTotal();
-}
-
-retrocederBtn.addEventListener('click', () => {
-    if (valoresPresionados.length > 0) {
-        const ultimoValor = valoresPresionados.pop();
-        total -= ultimoValor;
-        actualizarTotal();
-    }
-});
-
-const pasarAMoneda = (number) => {
+function formatCurrency(number) {
     return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }).replace(/COP\s/, '');
 }
 
+const restarPrecio = (precio) => {
+        precioTotal -= precio
+        PRECIO.textContent = formatCurrency(precioTotal)
+}
 
-retrocederBtn.addEventListener('click', () => {
-    if (valoresPresionados.length > 0) {
-        const ultimoValor = valoresPresionados.pop();
-        total -= ultimoValor;
-        actualizarTotal();
-    }
-});
-
-
+let op;
+let precio = 0
 const addConfig = (llave, valor) => {
     user.configuraciones.llave = valor
 };
 
+b.sec1CalidadOptima.addEventListener("click", () => {
+    op=1
+    addConfig("calidad", "óptima")
+    sections();
+});
 
+b.sec1CalidadPrecio.addEventListener("click", () => {
+    op=2
+    addConfig("calidad", "calidad/precio")
+    sections();
+});
 
-for (const clave in sb) {
-    if (Object.hasOwnProperty.call(sb, clave)) {
-      const boton = sb[clave];
-      boton.addEventListener('click', () => {
-        if (boton === sb.sec1CalidadOptima )
+b.sec1NoImporta.addEventListener("click", () => {
+    op=3
+    addConfig("calidad", "no importa")
+    sections();
+});
 
-        console.log('Se hizo clic en el botón:', clave);
-      });
+const ultimasConfig=()=>{
+
+    b.sec10Boceto.addEventListener("click" ,()=>{
+        addConfig("Boceto");
+    });
+    b.sec10Desarrollada.addEventListener("click" ,()=>{
+        addConfig("Desarrollada");
+    });
+    b.sec10EnDesarrollo.addEventListener("click" ,()=>{
+        addConfig("En Desarrollo");
+    });
+    b.sec10Idea.addEventListener("click" ,()=>{
+        addConfig("Idea");
+    });
+}
+
+const sections = () => {
+    if (op==1) {
+        b.reg2.addEventListener('click', () => {precioTotal = 0; PRECIO.textContent = formatCurrency(0)})
+
+        b.sec2Android.addEventListener("click", () => {
+            precio = 9000000
+            precioTotal += 9000000
+            PRECIO.textContent = formatCurrency(precioTotal)
+            addConfig("Android");
+        });
+        
+        b.sec2AndroidIOS.addEventListener("click", () => {
+            precioFinal += "15000000";
+            PRECIO.textContent = formatCurrency(precioTotal)
+            addConfig("Android & IOS");
+        });
+        b.sec2Escritorio.addEventListener("click", () => {
+            addValor(9000000);
+            addConfig("Escritorio");
+        });
+        b.sec2Windows.addEventListener("click", () => {
+            addValor(9000000);
+            addConfig("Windows");
+        });
+        b.sec2iOS.addEventListener("click", () => {
+            addValor(9000000);
+            addConfig("IOS");
+        });
+
+        b.reg3.addEventListener('click', () => { restarPrecio(precio)})
+
+        b.sec3NoNecesita.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No necesita");
+        });
+        b.sec3Sencilla.addEventListener("click", () => {
+            precioTotal += 6000000
+            PRECIO.textContent = formatCurrency(precioTotal)
+            addConfig("Sencilla");
+        });
+        b.sec3Personalizada.addEventListener("click", () => {
+            addValor(18000000);
+            addConfig("Personalizada");
+        });
+        b.sec3RepWeb.addEventListener("click", () => {
+            addValor(12000000);
+            addConfig("Replica Web");
+        });
+        b.sec4Gratis.addEventListener("click", () => {
+            addValor(750000);
+            addConfig("Gratis");
+        });
+        b.sec4Pago.addEventListener("click", () => {
+            addValor(750000);
+            addConfig("Pago");
+        });
+        b.sec4InApp.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("In-App");
+        });
+        b.sec4Otros.addEventListener("click", () => {
+            addValor(1500000);
+            addConfig("Otros");
+        });
+        b.sec5Redes.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Redes Sociales");
+        });
+        b.sec5Email.addEventListener("click", () => {
+            addValor(3750000);
+            addConfig("Email");
+        });
+        b.sec5No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec5NoSe.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("No Sé");
+        });
+        b.sec6Si.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Si");
+        });
+        b.sec6No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec6NoSe.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Nose");
+        });
+        b.sec7Si.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Si");
+        });
+        b.sec7No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec7NoSe.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Nose");
+        });
+        b.sec8Si.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Si");
+        });
+        b.sec8No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec8NoSe.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Nose");
+        });
+        b.sec9UnIdioma.addEventListener("click",()=>{
+            addValor(0)
+            addConfig("Un Idioma")
+        })
+        b.sec9Bilingue.addEventListener("click",()=>{
+            addValor(3000000)
+            addConfig("Un Idioma")
+        })
+        b.sec9Multilingue.addEventListener("click",()=>{
+            addValor(6000000)
+            addConfig("Un Idioma")
+        })
+        ultimasConfig()
+    } else if (op==2) {
+        b.sec2Android.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Android");
+        });
+        b.sec2AndroidIOS.addEventListener("click", () => {
+            addValor(10000000);
+            addConfig("Android & IOS");
+        });
+        b.sec2Escritorio.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Escritorio");
+        });
+        b.sec2Windows.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Windows");
+        });
+        b.sec2iOS.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("IOS");
+        });
+        b.sec3NoNecesita.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No necesita");
+        });
+        b.sec3Sencilla.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Sencilla");
+        });
+        b.sec3Personalizada.addEventListener("click", () => {
+            addValor(12000000);
+            addConfig("Personalizada");
+        });
+        b.sec3RepWeb.addEventListener("click", () => {
+            addValor(8000000);
+            addConfig("Replica Web");
+        });
+        b.sec4Gratis.addEventListener("click", () => {
+            addValor(500000);
+            addConfig("Gratis");
+        });
+        b.sec4Pago.addEventListener("click", () => {
+            addValor(500000);
+            addConfig("Pago");
+        });
+        b.sec4InApp.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("In-App");
+        });
+        b.sec4Otros.addEventListener("click", () => {
+            addValor(1000000);
+            addConfig("Otros");
+        });
+        b.sec5Redes.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Redes Sociales");
+        });
+        b.sec5Email.addEventListener("click", () => {
+            addValor(2500000);
+            addConfig("Email");
+        });
+        b.sec5No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec5NoSe.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("No Sé");
+        });
+        
+        b.sec6Si.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Si");
+        });
+        b.sec6No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec6NoSe.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Nose");
+        });
+        b.sec7Si.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Si");
+        });
+        b.sec7No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec7NoSe.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Nose");
+        });
+        b.sec8Si.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Si");
+        });
+        b.sec8No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec8NoSe.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Nose");
+        });
+        b.sec9UnIdioma.addEventListener("click",()=>{
+            addValor(0)
+            addConfig("Un Idioma")
+        })
+        b.sec9Bilingue.addEventListener("click",()=>{
+            addValor(2000000)
+            addConfig("Bilingue")
+        })
+        b.sec9Multilingue.addEventListener("click",()=>{
+            addValor(4000000)
+            addConfig("Multibilingue")
+        })
+        ultimasConfig()
+    } else {
+        b.sec2Android.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Android");
+        });
+        b.sec2AndroidIOS.addEventListener("click", () => {
+            addValor(5000000);
+            addConfig("Android & IOS");
+        });
+        b.sec2Escritorio.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Escritorio");
+        });
+        b.sec2Windows.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("Windows");
+        });
+        b.sec2iOS.addEventListener("click", () => {
+            addValor(3000000);
+            addConfig("IOS");
+        });
+        b.sec3NoNecesita.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No necesita");
+        });
+        b.sec3Sencilla.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Sencilla");
+        });
+        b.sec3Personalizada.addEventListener("click", () => {
+            addValor(6000000);
+            addConfig("Personalizada");
+        });
+        b.sec3RepWeb.addEventListener("click", () => {
+            addValor(4000000);
+            addConfig("Replica Web");
+        });
+        b.sec4Gratis.addEventListener("click", () => {
+            addValor(250000);
+            addConfig("Gratis");
+        });
+        b.sec4Pago.addEventListener("click", () => {
+            addValor(250000);
+            addConfig("Pago");
+        });
+        b.sec4InApp.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("In-App");
+        });
+        b.sec4Otros.addEventListener("click", () => {
+            addValor(500000);
+            addConfig("Otros");
+        });
+        b.sec5Redes.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Redes Sociales");
+        });
+        b.sec5Email.addEventListener("click", () => {
+            addValor(1250000);
+            addConfig("Email");
+        });
+        b.sec5No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec5NoSe.addEventListener("click", () => {
+            addValor(1000000);
+            addConfig("No Sé");
+        });
+        b.sec6Si.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Si");
+        });
+        b.sec6No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec6NoSe.addEventListener("click", () => {
+            addValor(1000000);
+            addConfig("Nose");
+        });
+        b.sec7Si.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Si");
+        });
+        b.sec7No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec7NoSe.addEventListener("click", () => {
+            addValor(1000000);
+            addConfig("Nose");
+        });
+        b.sec8Si.addEventListener("click", () => {
+            addValor(2000000);
+            addConfig("Si");
+        });
+        b.sec8No.addEventListener("click", () => {
+            addValor(0);
+            addConfig("No");
+        });
+        b.sec8NoSe.addEventListener("click", () => {
+            addValor(1000000);
+            addConfig("Nose");
+        });
+        b.sec9UnIdioma.addEventListener("click",()=>{
+            addValor(0)
+            addConfig("Un Idioma")
+        })
+        b.sec9Bilingue.addEventListener("click",()=>{
+            addValor(1000000)
+            addConfig("Un Idioma")
+        })
+        b.sec9Multilingue.addEventListener("click",()=>{
+            addValor(2000000)
+            addConfig("Un Idioma")
+        })
+
     }
-  }
+};
+
