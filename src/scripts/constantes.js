@@ -95,17 +95,31 @@ const sec10Boceto = document.getElementById('boceto');
 const sec10EnDesarrollo = document.getElementById('enDesarrollo');
 const sec10Desarrollada = document.getElementById('desarrollada');
 
+// Sección final 
+
+const regFinal = document.getElementById('volver-empezar');
+const crearProyecto = document.getElementById('crear-proyecto');
+const verInfo = document.getElementById('ver-resultado');
+const sectFinal = document.getElementById('section-final')
+
 
 /////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////// LOGIN /////////////////////////////
 
+<<<<<<< HEAD
 const boton = document.getElementById('loginButton');
+=======
+>>>>>>> c6a30364cdd2dc5e667aa88de29ef37b63fcf8e2
 const userName = document.getElementById('nombre-usuario');
 const userLastName = document.getElementById('apellidos-usuario');
 const userPais = document.getElementById('pais-usuario');
 const userNumber = document.getElementById('numero-usuario');
 const userCorreo = document.getElementById('correo-usuario');
+<<<<<<< HEAD
+=======
+const loginReg = document.getElementById('loginReg')
+>>>>>>> c6a30364cdd2dc5e667aa88de29ef37b63fcf8e2
 
 /////////////////// EXPORTACIÓN ////////////////
 
@@ -123,17 +137,36 @@ export const SECTIONS = {
     section10,
     loginSec,
     sectionEscritorio,
+    sectFinal,
 
 }
 
+
 export const BUTTONS = {
+<<<<<<< HEAD
     boton,
+=======
+    reg2,
+    reg3,
+    reg4,
+    reg5,
+    reg6,
+    reg7,
+    reg8,
+    reg9,
+    reg10, 
+    loginButton,
+    regEscritorio,  
+    crearProyecto,
+    verInfo,
+>>>>>>> c6a30364cdd2dc5e667aa88de29ef37b63fcf8e2
     userName,
     userLastName,
     userPais,
     userNumber,
     userCorreo,
     EMPEZAR,
+    regFinal,
     sec1CalidadOptima,
     sec1CalidadPrecio,
     sec1NoImporta,
@@ -170,18 +203,12 @@ export const BUTTONS = {
     sec10Desarrollada,
     sec10EnDesarrollo,
     sec10Idea,
-    reg2,
-    reg3,
-    reg4,
-    reg5,
-    reg6,
-    reg7,
-    reg8,
-    reg9,
-    reg10,
-    loginButton,
-    regEscritorio,
     secEscNativa,
     secEscPwa,
     secEscSpa,
+    loginReg,
+    
 }
+
+
+   

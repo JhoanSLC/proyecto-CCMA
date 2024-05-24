@@ -1,5 +1,6 @@
-import { SECTIONS as sect, BUTTONS as b} from './constantes'
 
+import { SECTIONS as sect, BUTTONS as b} from './constantes'
+const precioContainer = document.getElementById('precio-container')
 
 const loginForm = document.getElementById('loginForm');
 
@@ -26,19 +27,19 @@ export let animacionSecciones = (sec1, sec2) => {
     
 }
 
-b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.loginSec));
+b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.section1));
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Evita el envío del formulario por defecto
 
     if (loginForm.checkValidity()) {
         // El formulario es válido
-        animacionSecciones(sect.loginSec, sect.section1);
+        animacionSecciones(sect.loginSec, sect.sectFinal);
     } else {
         // El formulario no es válido, muestra mensajes de validación
         loginForm.reportValidity();
     }
 });
-let escritorioOno = [];
+
 // 1 - 2
 
 let sec1Botones = [b.sec1CalidadOptima, b.sec1CalidadPrecio, b.sec1NoImporta];
@@ -62,6 +63,19 @@ sec2Botones.forEach(boton => {
         
         boton.addEventListener('click', () => {
             isDesktop = false
+<<<<<<< HEAD
+=======
+            precioContainer.style.display = "flex"
+            setTimeout(() => {
+                precioContainer.style.opacity="0.2"
+            }, 230)
+            setTimeout(() => {
+                precioContainer.style.opacity="0.5"
+            }, 270)
+            setTimeout(() => {
+                precioContainer.style.opacity="1"
+            }, 310)
+>>>>>>> c6a30364cdd2dc5e667aa88de29ef37b63fcf8e2
             animacionSecciones(sect.section2, sect.section3)
         })
     }
@@ -130,6 +144,10 @@ sec9Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section9, sect.section10))
 })
 
+let sec10Botones = [b.sec10Boceto, b.sec10Desarrollada, b.sec10EnDesarrollo, b.sec10Idea];
+sec10Botones.forEach(boton => {
+    boton.addEventListener('click', () => animacionSecciones(sect.section10, sect.loginSec))
+})
 
  
 

@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 const addValor = (valor) => {
     user["valor"] += valor;
     console.log(user);
@@ -540,3 +541,17 @@ const sections = () => {
 
 console.log(user);
 
+=======
+import './animacion-secciones';
+import './regresar'
+import './precio'
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+
+    })
+})
+>>>>>>> c6a30364cdd2dc5e667aa88de29ef37b63fcf8e2
