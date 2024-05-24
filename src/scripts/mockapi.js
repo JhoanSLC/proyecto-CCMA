@@ -1,4 +1,4 @@
-import { userButtons as ub} from './constantes';
+import { BUTTONS as b} from './constantes';
 
 export let user = {
     "nombre":"",
@@ -36,11 +36,11 @@ async function enviarDatos(apiUrl, data) {
 }
 
 b.loginButton.addEventListener("click", () => {
-    user.nombre = ub.userName.value;
-    user.apellido = ub.userLastName.value;
-    user.numero = ub.userLastName.value; 
-    user.email = ub.userCorreo.value;
-    user.pais = ub.userPais.value;
+    user.nombre = b.userName.value;
+    user.apellido = b.userLastName.value;
+    user.numero = b.userLastName.value; 
+    user.email = b.userCorreo.value;
+    user.pais = b.userPais.value;
     // Llama a la función para enviar los datos
     enviarDatos(url, user);
     

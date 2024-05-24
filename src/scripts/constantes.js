@@ -134,7 +134,28 @@ export const SECTIONS = {
 
 }
 
-export const SECTION_BUTTONS = {
+
+export const BUTTONS = {
+    reg2,
+    reg3,
+    reg4,
+    reg5,
+    reg6,
+    reg7,
+    reg8,
+    reg9,
+    reg10, 
+    loginButton,
+    regEscritorio,  
+    crearProyecto,
+    verInfo,
+    userName,
+    userLastName,
+    userPais,
+    userNumber,
+    userCorreo,
+    EMPEZAR,
+    regFinal,
     sec1CalidadOptima,
     sec1CalidadPrecio,
     sec1NoImporta,
@@ -174,32 +195,9 @@ export const SECTION_BUTTONS = {
     secEscNativa,
     secEscPwa,
     secEscSpa,
-   
-}
-
-export const BUTTONS = {
-    reg2,
-    reg3,
-    reg4,
-    reg5,
-    reg6,
-    reg7,
-    reg8,
-    reg9,
-    reg10, 
+    loginReg,
     
 }
 
-export const userButtons = {
-    loginButton,
-    regEscritorio,  
-    crearProyecto,
-    verInfo,
-    userName,
-    userLastName,
-    userPais,
-    userNumber,
-    userCorreo,
-    EMPEZAR,
-    regFinal,
-}
+
+   

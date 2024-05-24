@@ -1,61 +1,24 @@
-import { BUTTONS as b, SECTIONS_BUTTONS as sb} from './constantes';
+import { BUTTONS as b} from './constantes';
 let PRECIO = document.getElementById('precio')
 import { user } from './mockapi'
 
-let precioFinal = Number;
-let thisPrecio = Number;
+let precioTotal = 0;
 
+let option = 0;
 
-let total = 0;
-valoresPresionados = [];
+let optima = false;
+let calidadPrecio = false;
+let noImporta = false;
 
-function actualizarTotal() {
-    PRECIO.textContent = total.toLocaleString('es-CO', { minimumFractionDigits: 0 });
+const activo = (activar, desact, desact2) => {
+    activar = true;
+    desact = false;
+    desact = false;
 }
 
-const sumarValor = (valor, boton) => {
-    const valores = boton.getAttribute('data-value').split(',').map(Number);
-    const valor = valores[valor]; 
-    total += valor;
-    valoresPresionados.push(valor);
-    actualizarTotal();
-}
-
-retrocederBtn.addEventListener('click', () => {
-    if (valoresPresionados.length > 0) {
-        const ultimoValor = valoresPresionados.pop();
-        total -= ultimoValor;
-        actualizarTotal();
-    }
-});
-
-const pasarAMoneda = (number) => {
-    return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }).replace(/COP\s/, '');
-}
+b.sec1CalidadOptima.addEventListener('click', () => {activo(optima, calidadPrecio, noImporta)})
+b.sec1CalidadPrecio.addEventListener('click', () => {activo(calidadPrecio, optima, noImporta)})
+b.noImporta.addEventListener('click', () => {activo(noImporta, optima, calidadPrecio)})
 
 
-retrocederBtn.addEventListener('click', () => {
-    if (valoresPresionados.length > 0) {
-        const ultimoValor = valoresPresionados.pop();
-        total -= ultimoValor;
-        actualizarTotal();
-    }
-});
-
-
-const addConfig = (llave, valor) => {
-    user.configuraciones.llave = valor
-};
-
-
-
-for (const clave in sb) {
-    if (Object.hasOwnProperty.call(sb, clave)) {
-      const boton = sb[clave];
-      boton.addEventListener('click', () => {
-        if (boton === sb.sec1CalidadOptima )
-
-        console.log('Se hizo clic en el botón:', clave);
-      });
-    }
-  }
+if 
