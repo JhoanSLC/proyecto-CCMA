@@ -42,7 +42,7 @@ loginForm.addEventListener('submit', (e) => {
 
 // 1 - 2
 
-let sec1Botones = [b.sec1CalidadOptima, b.sec1CalidadPrecio, b.sec1NoImporta];
+let sec1Botones = [b.sections.sec1CalidadOptima, b.sections.sec1CalidadPrecio, b.sections.sec1NoImporta];
 
 sec1Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section1, sect.section2));
@@ -50,11 +50,11 @@ sec1Botones.forEach(boton => {
 
 // 2 - 3
 
-let sec2Botones = [b.sec2Android, b.sec2AndroidIOS, b.sec2Escritorio, b.sec2Windows, b.sec2iOS];
+let sec2Botones = [b.sections.sec2Android, b.sections.sec2AndroidIOS, b.sections.sec2Escritorio, b.sections.sec2Windows, b.sections.sec2iOS];
 let isDesktop = false
 
 sec2Botones.forEach(boton => {
-    if (boton === b.sec2Escritorio) {
+    if (boton === b.sections.sec2Escritorio) {
         boton.addEventListener('click', () => {
             isDesktop = true
             animacionSecciones(sect.section2, sect.sectionEscritorio)
@@ -86,62 +86,61 @@ b.reg3.addEventListener('click', () => {
 })
 b.regEscritorio.addEventListener('click', () => animacionSecciones(sect.sectionEscritorio, sect.section2))
 // 2.5 - 3 
-let secEscBotones = [b.secEscNativa, b.secEscPwa, b.secEscSpa];
+let secEscBotones = [b.sections.secEscNativa, b.sections.secEscPwa, b.sections.secEscSpa];
 secEscBotones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.sectionEscritorio, sect.section3))
 })
 
-b.reg3
 
 // 3 - 4
-let sec3Botones = [b.sec3NoNecesita, b.sec3Personalizada, b.sec3RepWeb, b.sec3Sencilla]
+let sec3Botones = [b.sections.sec3NoNecesita, b.sections.sec3Personalizada, b.sections.sec3RepWeb, b.sections.sec3Sencilla]
 sec3Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section3, sect.section4))
 })
 
 // 4 - 5
 
-let sec4Botones = [b.sec4Gratis, b.sec4InApp, b.sec4Otros, b.sec4Pago]
+let sec4Botones = [b.sections.sec4Gratis, b.sections.sec4InApp, b.sections.sec4Otros, b.sections.sec4Pago]
 sec4Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section4, sect.section5))
 })
 
 // 5 - 6 
 
-let sec5Botones = [b.sec5Email, b.sec5No, b.sec5NoSe, b.sec5Redes]
+let sec5Botones = [b.sections.sec5Email, b.sections.sec5No, b.sections.sec5NoSe, b.sections.sec5Redes]
 sec5Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section5, sect.section6))
 })
 
 // 6 - 7
 
-let sec6Botones = [b.sec6No, b.sec6NoSe, b.sec6Si]
+let sec6Botones = [b.sections.sec6No, b.sections.sec6NoSe, b.sections.sec6Si]
 sec6Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section6, sect.section7))
 })
 
 // 7 - 8 
 
-let sec7Botones = [b.sec7No, b.sec7NoSe, b.sec7Si]
+let sec7Botones = [b.sections.sec7No, b.sections.sec7NoSe, b.sections.sec7Si]
 sec7Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section7, sect.section8))
 })
 
 // 8 - 9 
 
-let sec8Botones = [b.sec8No, b.sec8NoSe, b.sec8Si]
+let sec8Botones = [b.sections.sec8No, b.sections.sec8NoSe, b.sections.sec8Si]
 sec8Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section8, sect.section9))
 })
 
 // 9 - 10
 
-let sec9Botones = [b.sec9Bilingue, b.sec9Multilingue, b.sec9UnIdioma]
+let sec9Botones = [b.sections.sec9Bilingue, b.sections.sec9Multilingue, b.sections.sec9UnIdioma]
 sec9Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section9, sect.section10))
 })
 
-let sec10Botones = [b.sec10Boceto, b.sec10Desarrollada, b.sec10EnDesarrollo, b.sec10Idea];
+let sec10Botones = [b.sections.sec10Boceto, b.sections.sec10Desarrollada, b.sections.sec10EnDesarrollo, b.sections.sec10Idea];
 sec10Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section10, sect.loginSec))
 })

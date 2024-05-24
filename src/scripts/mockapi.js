@@ -50,7 +50,7 @@ async function enviarDatos(apiUrl, data) {
 b.loginButton.addEventListener("click", () => {
     user.nombre = b.userName.value;
     user.apellido = b.userLastName.value;
-    user.numero = b.userLastName.value; 
+    user.numero = b.userNumber.value; 
     user.email = b.userCorreo.value;
     user.pais = b.userPais.value;
     // Llama a la función para enviar los datos

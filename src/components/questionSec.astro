@@ -7,10 +7,10 @@ const {section} = Astro.props
 
 ---
 
-<section id={section} class="transition-all hidden opacity-0 container text-white max-w-screen-2xl h-screen flex-col items-center justify-center text-wrap text-center p-3 sm:px-0 ">
+<section id={section} class="transition-all hidden opacity-0 container text-white max-w-screen-2xl h-screen flex-col items-center justify-center text-wrap text-center p-3 sm:px-0 mt-12 md:mt-0">
     <HeaderNumber number={numero}/>
     <slot name="regresar" />
-    <h1 class="text-3xl mt-2 sm:text-2xl"><strong>{pregunta}</strong></h1>
+    <h1 class="text-2xl mt-2 sm:text-2xl"><strong>{pregunta}</strong></h1>
     
     <div class="flex flex-row gap-4 items-center mt-8 flex-wrap place-content-center">
         <slot name="card1"/>
