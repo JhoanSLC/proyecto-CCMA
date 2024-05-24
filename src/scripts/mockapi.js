@@ -7,7 +7,19 @@ export let user = {
     "email":"",
     "pais":"",
     "precioFinal": 0,
-    "configuraciones": {}
+    "configuraciones": {
+        "calidad" : "",
+        "tipo de app" : "",
+        "tipo de escritorio" : "",
+        "tipo de diseño" : "",
+        "como sacaras beneficio" : "",
+        "¿sistema de login?" : "",
+        "¿integrada a web?" : "",
+        "¿perfiles propios?" : "",
+        "¿panel de admin?" : "",
+        "idioma" : "",
+        "nivel de app" : "",
+    }
 };
 let op =0
 

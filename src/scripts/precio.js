@@ -10,6 +10,8 @@ let optima = false;
 let calidadPrecio = false;
 let noImporta = false;
 
+const addConfig = () => {}
+
 const activo = (activar, desact, desact2) => {
     activar = true;
     desact = false;
@@ -21,4 +23,10 @@ b.sec1CalidadPrecio.addEventListener('click', () => {activo(calidadPrecio, optim
 b.noImporta.addEventListener('click', () => {activo(noImporta, optima, calidadPrecio)})
 
 
-if 
+if (optima == true) {
+    for (let boton in b) {
+        boton.addEventListener('click', () => {
+    
+        })
+    }
+}
