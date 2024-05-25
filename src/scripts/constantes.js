@@ -17,7 +17,7 @@ const section10 = document.getElementById('section-10'); // Guardo la decima sec
 
 ///////////////////////////////////////////////////////////////////////////////////
 
-
+const precioAzul=document.querySelector('h1')
 // // // // // // // // // BOTONES // // // // // // // // // // // // // //
 
 const EMPEZAR = document.getElementById('empezar'); // Guardo el boton de empezar

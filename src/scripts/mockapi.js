@@ -1,10 +1,11 @@
 import { BUTTONS as b} from './constantes';
 
 export let user = {
-    "name":"",
-    "last-name":"",
+    "id":"",
+    "nombre":"",
+    "apellido":"",
     "numero": 0,
-    "correo":"",
+    "email":"",
     "pais":"",
     "precioFinal": 0,
     "configuraciones": {
