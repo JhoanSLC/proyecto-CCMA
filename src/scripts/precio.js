@@ -1,6 +1,7 @@
 
 import { BUTTONS as b} from './constantes';
 let PRECIO = document.getElementById('precio')
+let precioh1=document.getElementById('precioh1')
 import { user } from './mockapi'
 const CalidaOptima = b.sections.sec1CalidadOptima;
 const calidadPrecio = b.sections.sec1CalidadPrecio;
@@ -71,6 +72,7 @@ const addConfig = () => {
 
 const actualizarTotal=(precioTotal)=>{
     PRECIO.textContent=pasarAMoneda(precioTotal)
+    precioh1.textContent=pasarAMoneda(precioTotal)
 }
 const pasarAMoneda=(number)=>{
     return number.toLocaleString('es-CO', { style: 'currency', currency: 'COP'}).replace(/COP\s/,'')
