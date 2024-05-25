@@ -57,7 +57,6 @@ let isThisRunning = false;
 
 const addConfig = () => {
     user.configuraciones['tipo de app']=botonConfig[0]
-    user.configuraciones['tipo de escritorio']=botonConfig[1]
     user.configuraciones['tipo de diseño']=botonConfig[1]
     user.configuraciones['como sacaras beneficio']=botonConfig[2]
     user.configuraciones['¿sistema de login?']=botonConfig[3]
