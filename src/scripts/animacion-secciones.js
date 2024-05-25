@@ -45,7 +45,7 @@ loginForm.addEventListener('submit', (e) => {
 // 1 - 2
 
 let sec1Botones = [b.sections.sec1CalidadOptima, b.sections.sec1CalidadPrecio, b.sections.sec1NoImporta];
-
+b.loginButton.addEventListener('click', () => animacionSecciones(sect.loginSec, sect.sectFinal))
 sec1Botones.forEach(boton => {
     boton.addEventListener('click', () => animacionSecciones(sect.section1, sect.section2));
 })
@@ -146,7 +146,7 @@ sec9Botones.forEach(boton => {
 
 let sec10Botones = [b.sections.sec10Boceto, b.sections.sec10Desarrollada, b.sections.sec10EnDesarrollo, b.sections.sec10Idea];
 sec10Botones.forEach(boton => {
-    boton.addEventListener('click', () => animacionSecciones(sect.section10, sect.sectFinal))
+    boton.addEventListener('click', () => animacionSecciones(sect.section10, sect.loginSec))
 })
 
  

@@ -84,10 +84,12 @@ const sumarValor =(valor)=>{
 export const restarValor = (valor) => {
     precioTotal -= Number(valor);
     actualizarTotal(precioTotal);
+    botonConfig.pop()
     addValor(precioTotal);
     console.log(precioTotal);
     console.log(botonValor)
 };
+
 
 const sacarValor = (botonASacar, valorASacar) => {
     return botonASacar.getAttribute(valorASacar)
@@ -128,17 +130,22 @@ const proceso = (valorASacar, boton2, boton3, valor2Asacar) => {
 b.sections.sec1CalidadOptima.addEventListener('click', () => {
    proceso(DATA1, calidadPrecio, noImporta,DATA4)
    botonConfig.push(sacarValor(b.sections.sec1CalidadOptima,DATA4))
+   console.log(botonConfig);
    addConfig()
   
 })
 b.sections.sec1CalidadPrecio.addEventListener('click', () => {
     proceso(DATA2, CalidaOptima,noImporta,DATA4)
     botonConfig.push(sacarValor(b.sections.sec1CalidadPrecio,DATA4))
+    console.log(botonConfig);
+
     addConfig()
 })
 b.sections.sec1NoImporta.addEventListener('click', () => {
     botonConfig.push(sacarValor(b.sections.sec1NoImporta,DATA4))
     proceso(DATA3,calidadPrecio,CalidaOptima,DATA4)
+    console.log(botonConfig);
+
     addConfig()
    
 })
