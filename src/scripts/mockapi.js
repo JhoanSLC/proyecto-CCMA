@@ -1,10 +1,10 @@
 import { BUTTONS as b} from './constantes';
 
 export let user = {
-    "nombre":"",
-    "apellido":"",
+    "name":"",
+    "last-name":"",
     "numero": 0,
-    "email":"",
+    "correo":"",
     "pais":"",
     "precioFinal": 0,
     "configuraciones": {
@@ -23,7 +23,7 @@ export let user = {
 let op =0
 
 
-const url = 'https://664e7c36fafad45dfae02f85.mockapi.io/users'; 
+const url = 'https://664e7c36fafad45dfae02f85.mockapi.io/users'; // Reemplaza con tu URL de MockAPI
 
 async function enviarDatos(apiUrl, data) {
     try {

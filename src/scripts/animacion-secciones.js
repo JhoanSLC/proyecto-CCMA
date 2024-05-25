@@ -27,13 +27,13 @@ export let animacionSecciones = (sec1, sec2) => {
     
 }
 
-b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.section1));
+b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.loginSec));
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Evita el envío del formulario por defecto
 
     if (loginForm.checkValidity()) {
         // El formulario es válido
-        animacionSecciones(sect.loginSec, sect.sectFinal);
+        animacionSecciones(sect.loginSec, sect.section1);
     } else {
         // El formulario no es válido, muestra mensajes de validación
         loginForm.reportValidity();
@@ -142,7 +142,7 @@ sec9Botones.forEach(boton => {
 
 let sec10Botones = [b.sections.sec10Boceto, b.sections.sec10Desarrollada, b.sections.sec10EnDesarrollo, b.sections.sec10Idea];
 sec10Botones.forEach(boton => {
-    boton.addEventListener('click', () => animacionSecciones(sect.section10, sect.loginSec))
+    boton.addEventListener('click', () => animacionSecciones(sect.section10, sect.sectFinal))
 })
 
  
