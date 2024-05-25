@@ -56,16 +56,16 @@ let isThisRunning = false;
 
 
 const addConfig = () => {
-    user.configuraciones['tipo de app']=botonConfig[0]
-    user.configuraciones['tipo de escritorio']=botonConfig[1]
-    user.configuraciones['tipo de diseño']=botonConfig[1]
-    user.configuraciones['como sacaras beneficio']=botonConfig[2]
-    user.configuraciones['¿sistema de login?']=botonConfig[3]
-    user.configuraciones['¿integrada a web?']=botonConfig[4]
-    user.configuraciones['¿perfiles propios?']=botonConfig[5]
-    user.configuraciones['¿panel de admin?']=botonConfig[6]
-    user.configuraciones['idioma']=botonConfig[7]
-    user.configuraciones['nivel de app']=botonConfig[8]
+    user.configuraciones['calidad']=botonConfig[0]
+    user.configuraciones['tipo de app']=botonConfig[1]
+    user.configuraciones['tipo de diseño']=botonConfig[2]
+    user.configuraciones['como sacaras beneficio']=botonConfig[3]
+    user.configuraciones['¿sistema de login?']=botonConfig[4]
+    user.configuraciones['¿integrada a web?']=botonConfig[5]
+    user.configuraciones['¿perfiles propios?']=botonConfig[6]
+    user.configuraciones['¿panel de admin?']=botonConfig[7]
+    user.configuraciones['idioma']=botonConfig[8]
+    user.configuraciones['nivel de app']=botonConfig[9]
     console.log(user)
 }
 
@@ -85,6 +85,8 @@ export const restarValor = (valor) => {
     precioTotal -= Number(valor);
     actualizarTotal(precioTotal);
     addValor(precioTotal);
+    console.log(precioTotal);
+    console.log(botonValor)
 };
 
 const sacarValor = (botonASacar, valorASacar) => {
@@ -105,6 +107,8 @@ const proceso = (valorASacar, boton2, boton3, valor2Asacar) => {
             botonConfig.push(sacarValor(boton,valor2Asacar)) 
             console.log(botonConfig)
             sumarValor(botonValor)
+            console.log(precioTotal)
+            console.log(botonValor)
             addConfig()
             
         })
@@ -123,13 +127,19 @@ const proceso = (valorASacar, boton2, boton3, valor2Asacar) => {
 
 b.sections.sec1CalidadOptima.addEventListener('click', () => {
    proceso(DATA1, calidadPrecio, noImporta,DATA4)
+   botonConfig.push(sacarValor(b.sections.sec1CalidadOptima,DATA4))
+   addConfig()
   
 })
 b.sections.sec1CalidadPrecio.addEventListener('click', () => {
     proceso(DATA2, CalidaOptima,noImporta,DATA4)
+    botonConfig.push(sacarValor(b.sections.sec1CalidadPrecio,DATA4))
+    addConfig()
 })
 b.sections.sec1NoImporta.addEventListener('click', () => {
+    botonConfig.push(sacarValor(b.sections.sec1NoImporta,DATA4))
     proceso(DATA3,calidadPrecio,CalidaOptima,DATA4)
+    addConfig()
    
 })
 

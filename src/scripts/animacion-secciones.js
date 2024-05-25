@@ -1,5 +1,7 @@
 
+import Regresar from '../components/regresar.astro';
 import { SECTIONS as sect, BUTTONS as b} from './constantes'
+import { restarValor, botonValor } from './precio';
 const precioContainer = document.getElementById('precio-container')
 
 const loginForm = document.getElementById('loginForm');
@@ -27,7 +29,7 @@ export let animacionSecciones = (sec1, sec2) => {
     
 }
 
-b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.loginSec));
+b.EMPEZAR.addEventListener('click', () => animacionSecciones(sect.mainSection, sect.section1));
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Evita el envío del formulario por defecto
 
@@ -79,8 +81,10 @@ sec2Botones.forEach(boton => {
 })
 b.reg3.addEventListener('click', () => {
     if (isDesktop == true) {
+        restarValor(botonValor)
         animacionSecciones(sect.section3, sect.sectionEscritorio);
     } else {
+        restarValor(botonValor)
         animacionSecciones(sect.section3, sect.section2)
     }
 })
